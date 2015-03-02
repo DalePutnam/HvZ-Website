@@ -1,0 +1,66 @@
+span.green
+{
+	color: green;
+}
+span.red
+{
+	color: red;
+}
+
+/* css for timepicker */
+.ui-timepicker-div .ui-widget-header { margin-bottom: 8px; }
+.ui-timepicker-div dl { text-align: left; }
+.ui-timepicker-div dl dt { float: left; clear:left; padding: 0 0 0 5px; }
+.ui-timepicker-div dl dd { margin: 0 10px 10px 45%; }
+.ui-timepicker-div td { font-size: 90%; }
+.ui-tpicker-grid-label { background: none; border: none; margin: 0; padding: 0; }
+
+.ui-timepicker-rtl{ direction: rtl; }
+.ui-timepicker-rtl dl { text-align: right; padding: 0 5px 0 0; }
+.ui-timepicker-rtl dl dt{ float: right; clear: right; }
+.ui-timepicker-rtl dl dd { margin: 0 45% 10px 10px; }
+
+/* css for player list */
+.ui-menu { width: 150px; font-size: 62%; }
+.context-menu { position:absolute; }
+tr.over.player { background-color: yellow; }
+
+/* Mail Log */
+table.mail
+{
+	vertical-align:top;
+	text-align: left;
+}
+
+table.mail td
+{
+	vertical-align:top;
+	text-align: left;
+}
+
+table.mail td.body
+{
+	width: 300px;
+}
+
+/* Stun Log */
+table.stuns
+{
+	vertical-align:top;
+	text-align: left;
+}
+
+table.stuns td
+{
+	vertical-align:top;
+	text-align: left;
+}
+
+table.stuns td.comment
+{
+	width: 300px;
+}
+
+.archive-players td {
+    vertical-align: top;
+}

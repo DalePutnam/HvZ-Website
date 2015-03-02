@@ -1,0 +1,11 @@
+{killer_first} {killer_last} has reported a stun on you
+{killer_first} {killer_last} has reported that they stunned you {kill_time}.
+
+They left the following comment:
+{comment}
+
+{killer_first} has reported stunning you {count} time(s) today.
+
+If you would like to contest the issue, please contact one of our moderators. Otherwise they will get their points at the end of the day.
+
+{hvz_site}

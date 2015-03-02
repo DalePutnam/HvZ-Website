@@ -1,0 +1,6 @@
+You have been tagged by {killer_first} {killer_last}
+At {kill_time} a tag on you was reported by {killer_first} {killer_last} and thus you are now a zombie. Your status on the website has been updated to reflect this.
+
+If you would like to contest the issue, please contact one of our moderators.
+
+{hvz_site}

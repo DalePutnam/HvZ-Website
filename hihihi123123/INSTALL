@@ -1,0 +1,7 @@
+1) Modify install-config.php
+2) Modify config.php to match database options
+3) Run install.php
+4) Delete or move install directory
+5) Ensure the anti-hammer directory is writable
+6) Modify anti-hammer.php to reflect the absolute directory of its files
+7) Log in as admin, click Fix Subscriptions

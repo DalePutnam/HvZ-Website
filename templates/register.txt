@@ -1,0 +1,16 @@
+Welcome to Humans vs. Zombies at the University of Waterloo
+Thank you {first_name} {last_name} for signing up for Humans vs. Zombies. Please use the password {password} to log onto our website at {hvz_site}. This can be changed once you log-in.
+
+The game will begin on {game_start}. If you have any friends interested in joining, please send them to one of our booths before registration ends on {reg_end}.
+
+This Sunday, February 1st at 7 pm we will be holding a small practice game to introduce the rules and have a bit of fun. Please bring your weapons and headbands/armbands. Everyone will get a chance to try both teams. It’s a good way to gain basic knowledge and skills for the week. We will be meeting in MC 2066. This is optional but advised for newer players.
+
+It’s very important to log onto the website and READ all your emails. We will be contacting you every day with a schedule of the mini-missions happening during the day as well as the details and times for the main missions. There will also be very important details that will be disclosed over email.
+
+Some information will be sent over twitter through @HVZAlertSystem. You can get the tweets texted to you by texting “follow @HVZAlertSystem” to the number 21212.
+
+Another new feature is a Human Inventory that will contain items that affect all humans. These items earned through special mini-missions will make the main missions easier to complete. Zombies are also able to earn special-infected through these mini-missions.   
+
+Don't forget to read the rules on the website.
+
+{hvz_site}

@@ -1,0 +1,4 @@
+Your Humans vs. Zombies Password has been Reset
+Your Humans vs. Zombies password has been reset to {password}. Please use this from now on to log into the website.
+
+{hvz_site}

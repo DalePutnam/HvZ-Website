@@ -1,0 +1,4 @@
+You have been Banned from Humans vs. Zombies
+You have been banned from the game. Please contact a moderator if you think this has happened in error.
+
+{hvz_site}

@@ -1,0 +1,28 @@
+
+     #####    ###     ##  ### ########             ###     ##  ###    ###TM
+   #######  #######   ####### ########           #######   #######  #######
+  ###      ###   ###  ###         ###           ###   ###  ###     ###   ##
+  ###      ###   ###  ##       ###              ###   ###  ##      ###   ##
+   #######  #######   ##      ########    ###    #######   ##        ######
+     #####    ###     ##      ########    ###      ###     ##           ###
+                                                                     #####
+
+	About the anti-hammer/ directory..
+
+
+    See the notes inside the sessions folder for more info about that.
+
+    The "exemptions" folder does not need to be writable, though you may want to
+    look inside and edit its contents, particularly exemptions.ini.
+
+    If you rename the exemptions folder, or the ini, you will need to hack those
+    inside the php. These are effectively "fixed" for the average user, by which
+    I mean a user who wouldn't be reading this far!
+
+    Have fun!
+
+	;o) Cor
+
+	(c) corz.org 2007 ->
+
+    -= nothing is foolproof to the sufficiently talented fool =-
