@@ -33,11 +33,11 @@ if( isset( $_REQUEST["action"] ) )
 
 page_head();
 ?>
-<h2>Add Player</h2>
-<div>
-	<?php
-		player_form( NULL, false );
-	?>
+<div class="row">
+<div class="col-md-3">
+    <h2>Add Player</h2>
+    <?php player_form( NULL, false ); ?>
+</div>
 </div>
 <?php
 page_foot();

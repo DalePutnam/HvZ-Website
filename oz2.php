@@ -35,10 +35,70 @@ $player_ids = get_ids($players);
 $pool_initial = array_diff( $oz_pool, $oz_list );
 $all_initial = array_diff( $player_ids, $oz_list );
 
-page_head();
-if( is_game_started() ) echo "<strong>Game has been started, OZ tables are now read-only</strong>";
-?>
-<table style="width: 100%;">
+page_head();?>
+<div class="row">
+<div class="col-md-12">
+
+<?php if( is_game_started() ) echo "<strong>Game has been started, OZ tables are now read-only</strong>";?>
+
+<div class="row">
+    <div class="col-md-4">
+        <h4>OZ Pool (<span id="pn"></span>)</h4>
+    </div>
+<?php if ( !is_game_started() ) { ?>
+    <div class="col-md-4">
+        <h4>All Players (<span id="an"></span>)</h4>
+    </div>
+<?php } ?>
+    <div class="col-md-4">
+        <h4>OZ List (<span id="ln"></span>)</h4>
+    </div>
+</div>
+<?php if( !is_game_started() ) { ?>
+<div class="row">
+    <div class="col-md-4">
+        <form class="form-inline">
+            <div class="form-group">
+                <label>Add <input style="width: 40px" class="form-control" id="rand" value="0"/> random OZs</label>
+                <input type="button" class="btn btn-default" id="go" value="Go" />
+            </div>
+        </form>
+    </div>
+    <?php if( !is_game_started() ) { ?>
+        <div class="col-md-4 col-md-offset-4">
+
+            <form class="form-inline" method="post" action="" id="save">
+                <input type="button" class="btn btn-default" id="clear" value="Clear"/>
+                <?php
+                foreach($oz_list as $id)
+                {
+                    ?>
+                    <input type="hidden" name="ids[]" value="<?php echo $id; ?>"/>
+                <?php
+                }
+                ?>
+                <input class="form-control" type="submit" name="action" value="Save OZ List" id="save_button" style="display:none;" />
+            </form>
+        </div>
+    <?php } ?>
+</div>
+<?php } ?>
+
+<div class="row">
+    <div id="pool" class="col-md-4">
+        <?php gen_player_table( $players, $namePlayerProperties, $pool_initial, false ); ?>
+    </div>
+<?php if( !is_game_started() ) { ?>
+    <div id="all" class="col-md-4">
+        <?php gen_player_table( $players, $namePlayerProperties, $all_initial, false ); ?>
+    </div>
+<?php } ?>
+    <div id="list" class="col-md-4">
+        <?php gen_player_table( $players, $namePlayerProperties, $oz_list, false ); ?>
+    </div>
+</div>
+
+<!--<table style="width: 100%;">
 	<tr>
 		<th>OZ Pool (<span id="pn"></span>)</th><?php if( !is_game_started() ) { ?><th>All Players (<span id="an"></span>)</th><?php } ?><th>OZ List (<span id="ln"></span>)</th>
 	</tr>
@@ -49,7 +109,7 @@ if( is_game_started() ) echo "<strong>Game has been started, OZ tables are now r
 		<?php } ?>
 		<?php gen_player_table( $players, $namePlayerProperties, $pool_initial, false ); ?>
 		</td>
-		<?php if( !is_game_started() ) { ?>
+        <?php if( !is_game_started() ) { ?>
 		<td id="all" style="vertical-align:top;">
 		<?php gen_player_table( $players, $namePlayerProperties, $all_initial, false ); ?>
 		</td>
@@ -72,7 +132,9 @@ if( is_game_started() ) echo "<strong>Game has been started, OZ tables are now r
 		<?php gen_player_table( $players, $namePlayerProperties, $oz_list, false ); ?>
 		</td>
 	</tr>
-</table>
+</table>-->
+</div>
+</div>
 <script type="text/javascript">
 	var changes = false;
 	var started = <?php if(is_game_started()) { echo "true"; } else { echo "false"; } ?>;
@@ -176,7 +238,7 @@ if( is_game_started() ) echo "<strong>Game has been started, OZ tables are now r
 	UpdateCounts();
 	
 	// random OZ adding
-	$("button#go").click( function() {
+    $("input#go").click( function() {
 		var p = poolTable.getPlayerIDs();
 		var r = [];
 		var num = parseInt($("input#rand").val());
@@ -199,9 +261,10 @@ if( is_game_started() ) echo "<strong>Game has been started, OZ tables are now r
 			AddToList( r[a] );
 		}
 	});
-	
-	$("button#clear").click( ClearList );
+
+    $("input#clear").click( ClearList );
 </script>
+
 <?php
 page_foot();
 ?>

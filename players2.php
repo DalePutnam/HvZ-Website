@@ -90,96 +90,85 @@ if( IsAdmin() ) {
 	}
 }
 
-page_head();
-
-if( IsAdmin() && $show_add ) {
+page_head(); ?>
+<div class="row">
+<div class="col-md-9">
+<?php
+if ( IsAdmin() ) {
 ?>
-	<h2>Add Player</h2><div><?php
-	player_form( );
-	?></div><?php
+    <div class="row" style="padding-top: 15px">
+        <div class="col-md-8">
+            <form class="form-inline" method="get" action="">
+                <div class="form-group">
+                    <label>Sorting Options:</label>
+                    <select class="form-control" name="sf">
+                        <option value="first_name,last_name">Name</option>
+                        <option value="score">Score</option>
+                        <option value="type,score">Team and Score</option>
+                    </select>
+                </div>
+                <div class="form-group text-center checkbox">
+                    <label><input type="checkbox" name="sa" value="false" /> Sort Descending</label>
+                </div>
+                <div class="form-group">
+                    <input class="btn btn-default" type="submit" value="Sort"</input>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-4">
+            <h5>Right click users to edit/delete/ban/etc</h5>
+        </div>
+    </div>
+<?php
 }
-else if( IsAdmin() )
-{
-	?><h2>Edit Player</h2><div><?php
-		player_form( $players[$_REQUEST["id"]] );
-	?></div><?php
-}
-
 $sort_fields = array("first_name", "last_name");
 $sort_asc = TRUE;
 if( IsAdmin() )
 {
-	if( isset( $_GET["sf"] ) )
-	{
-		$sort_fields = explode(",", trim($_GET["sf"]));
-	}
-	if( isset( $_GET["sa"] ) )
-	{
-		if( $_GET["sa"] == "false" )
-		{
-			$sort_asc = FALSE;
-		}
-	}
-	/*$ids = get_ids( $players );*/
-	$ids = get_ids_sorted_by( $sort_fields, $sort_asc );
+    if( isset( $_GET["sf"] ) )
+    {
+        $sort_fields = explode(",", trim($_GET["sf"]));
+    }
+    if( isset( $_GET["sa"] ) )
+    {
+        if( $_GET["sa"] == "false" )
+        {
+            $sort_asc = FALSE;
+        }
+    }
+    /*$ids = get_ids( $players );*/
+    $ids = get_ids_sorted_by( $sort_fields, $sort_asc );
 }
 elseif( IsZombie() || IsSpectator() )
 {
-	/*$split_ids = split_ids_types( $players );*/
-	$split_ids = get_ids_sorted_by($sort_fields, $sort_asc, TRUE);
-	hide_player_properties( $players, array("id", "first_name", "last_name", "type", "email", "score", "show_score") );
-	
-	foreach($players as &$player)
-	{
-		if( $player["show_score"] == 0 )
-		{
-			$player["score"] = "HIDDEN";
-		}
-	}
+    /*$split_ids = split_ids_types( $players );*/
+    $split_ids = get_ids_sorted_by($sort_fields, $sort_asc, TRUE);
+    hide_player_properties( $players, array("id", "first_name", "last_name", "type", "email", "score", "show_score") );
+
+    foreach($players as &$player)
+    {
+        if( $player["show_score"] == 0 )
+        {
+            $player["score"] = "HIDDEN";
+        }
+    }
 }
 elseif( !IsAdmin() )
 {
-	/*$players_only = get_ids_types( $players, array("HUMAN", "ZOMBIE", "NONE") );*/
-	$players_only = get_ids_sorted_by($sort_fields, $sort_asc, FALSE, array("HUMAN", "ZOMBIE", "NONE"));
-	hide_player_properties( $players, array("id", "first_name", "last_name", "email", "score", "show_score") );
-	
-	foreach($players as &$player)
-	{
-		if( $player["show_score"] == 0 )
-		{
-			$player["score"] = "HIDDEN";
-		}
-	}
+    /*$players_only = get_ids_types( $players, array("HUMAN", "ZOMBIE", "NONE") );*/
+    $players_only = get_ids_sorted_by($sort_fields, $sort_asc, FALSE, array("HUMAN", "ZOMBIE", "NONE"));
+    hide_player_properties( $players, array("id", "first_name", "last_name", "email", "score", "show_score") );
+
+    foreach($players as &$player)
+    {
+        if( $player["show_score"] == 0 )
+        {
+            $player["score"] = "HIDDEN";
+        }
+    }
 }
-?>
-<?php
-	if( IsAdmin() )
-	{
-		echo "<h2>Players</h2>";
-		echo "<h3>Stats</h3>";
-		echo "<strong>All Players Score:</strong> " . get_team_score() . "<br/>";
-		echo "<strong>Average Players Score:</strong> " . get_team_score(NULL, true) . "<br/><br/>";
-		
-		echo "<strong>Total Human Score:</strong> " . get_team_score("HUMAN") . "<br/>";
-		echo "<strong>Average Human Score:</strong> " . get_team_score("HUMAN", true) . "<br/><br/>";
-		
-		echo "<strong>Total Zombie Score:</strong> " . get_team_score("ZOMBIE") . "<br/>";		
-		echo "<strong>Average Zombie Score:</strong> " . get_team_score("ZOMBIE", true) . "<br/>";
-		
-		echo "<h3>List</h3>";
-		echo "<p>Right click users to edit/delete/ban/etc.</p>";
-		?>
-Sorting Options:
-<form method="get" action="">
-<select name="sf">
-<option value="first_name,last_name">Name</option>
-<option value="score">Score</option>
-<option value="type,score">Team and Score</option>
-</select>
-&nbsp;Descending:<input type="checkbox" name="sa" value="false">
-<input type="submit" value="Sort"</input>
-</form>
-		<?php
+
+    if( IsAdmin() ) {
 		echo "<div id='table'>";
 		gen_player_table( $players, $fullPlayerProperties, $ids, false );
 		echo "</div>";
@@ -204,6 +193,39 @@ Sorting Options:
 		echo "</div>";
 	}
 ?>
+</div>
+
+<div class="col-md-3">
+<?php if( IsAdmin() && $show_add ) {
+?>
+    <h2>Add Player</h2>
+    <div class="row"><div class="col-md-12"><?php player_form( ); ?></div></div>
+    <?php
+    }
+    else if( IsAdmin() )
+    { ?>
+        <h2>Edit Player</h2>
+        <div class="row"><div class="col-md-12"><?php player_form( $players[$_REQUEST["id"]] ); ?></div></div>
+    <?php
+    }
+
+    ?>
+    <?php
+    if( IsAdmin() ) {
+        echo "<h2>Players</h2>";
+        echo "<h3>Stats</h3>";
+        echo "<strong>All Players Score:</strong> " . get_team_score() . "<br/>";
+        echo "<strong>Average Players Score:</strong> " . get_team_score(NULL, true) . "<br/><br/>";
+
+        echo "<strong>Total Human Score:</strong> " . get_team_score("HUMAN") . "<br/>";
+        echo "<strong>Average Human Score:</strong> " . get_team_score("HUMAN", true) . "<br/><br/>";
+
+        echo "<strong>Total Zombie Score:</strong> " . get_team_score("ZOMBIE") . "<br/>";
+        echo "<strong>Average Zombie Score:</strong> " . get_team_score("ZOMBIE", true) . "<br/>";
+    } ?>
+</div>
+</div>
+
 <script type="text/javascript">
 <?php if( IsAdmin() ) { ?>
 	LoadPlayerData2(<?php echo json_encode( $players ); ?>);

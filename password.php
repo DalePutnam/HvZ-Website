@@ -27,14 +27,28 @@ if( isset( $_REQUEST["action"] ) )
 
 page_head();
 ?>
-<h1>Reset Your Password</h1>
-<p>Warning: This process will log you out</p>
-<form method="post" action="">
-Old Password:&nbsp;<input type="password" name="old" /><br/>
-New Password:&nbsp;<input type="password" name="new" /><br/>
-Confirm Password:&nbsp;<input type="password" name="confirm" /><br/>
-<input type="submit" name="action" value="Change Password" />
-</form>
+<div class="row">
+    <div class="col-md-4">
+        <h1>Reset Your Password</h1>
+        <p>Warning: This process will log you out</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3">
+        <form class="form-horizontal" method="post" action="">
+            <div class="form-group">
+                <div class="col-md-12"><input class="form-control" placeholder="Old Password" type="password" name="old" /></div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12"><input class="form-control" placeholder="New Password" type="password" name="new" /></div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12"><input class="form-control" placeholder="Confirm Password" type="password" name="confirm" /></div>
+            </div>
+            <input class="btn btn-default" type="submit" name="action" value="Change Password" />
+        </form>
+    </div>
+</div>
 <?php
 page_foot();
 ?>

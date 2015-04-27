@@ -10,10 +10,14 @@ function page_archive_head()
         <title>Humans vs. Zombies</title>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+        <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>-->
+        <script src="bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
         <script src="../js/jquery-ui-timepicker-addon.js"></script>
         <script src="../js/players.js"></script>
         <script src="../js/players2.js"></script>
         <script src="../js/graph.js"></script>
+        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">-->
+        <link rel="stylesheet" href="bootstrap-3.3.4-dist/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
         <link rel="stylesheet" type="text/css" href="../style.css">
     </head>
@@ -50,12 +54,16 @@ function page_unsecure_head()
 	<html>
 	<head>
 	<title>Humans vs. Zombies</title>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>-->
+    <script src="bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
 	<script src="js/jquery-ui-timepicker-addon.js"></script>
 	<script src="js/players.js"></script>
 	<script src="js/players2.js"></script>
 	<script src="js/graph.js"></script>
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="bootstrap-3.3.4-dist/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
@@ -77,29 +85,43 @@ function page_head()
 	<html>
 	<head>
 	<title>Humans vs. Zombies</title>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>-->
+    <script src="bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
 	<script src="js/jquery-ui-timepicker-addon.js"></script>
 	<script src="js/players.js"></script>
 	<script src="js/players2.js"></script>
 	<script src="js/graph.js"></script>
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="bootstrap-3.3.4-dist/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
-	<link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
-	<table>
+
+	<!--<table>
 	<tr>
-	<td colspan="2">
+	<td colspan="2">-->
 	<!-- Header -->
-	<?php include("header.php"); ?>
-	</td>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+    <?php include("header.php"); ?>
+    </div>
+    </nav>
+	<!--</td>
 	</tr>
 	<tr>
-	<td style="width:150px;vertical-align:top;">
+	<td style="width:150px;vertical-align:top;">-->
 	<!-- Sidebar -->
-	<?php include("sidebar.php"); ?>
-	</td>
-	<td style="vertical-align:top;width=100%;">
+    <div class="container-fluid">
+    <div class="row">
+    <div class="col-md-2 sidebar">
+    <?php include("sidebar.php"); ?>
+    </div>
+    <div class="col-md-10 col-md-offset-2 main">
+	<!--</td>
+	<td style="vertical-align:top;width=100%;">-->
 	<?php
 	write_response();
 }
@@ -120,7 +142,10 @@ function write_response()
 function page_foot()
 {
 	?>
-	</td></tr></table>
+	<!--</td></tr></table>-->
+	</div>
+    </div>
+    </div>
 	</body>
 	</html>
 	<?php

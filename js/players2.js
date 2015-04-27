@@ -211,7 +211,7 @@ PlayerTable2.prototype.addPlayer = function( playerID, bulk ) {
 	var entry = $("<tr>").appendTo(this.table).addClass("player");
 	var thisTable = this;
 	
-	var idRow = $("<td>").appendTo(entry);
+	var idRow = $("<td style='display:none;'>").appendTo(entry);
 	if( this.boxes )
 	{
 		idRow.append($("<input name='id' type='checkbox'>").val(playerID));

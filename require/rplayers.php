@@ -671,9 +671,10 @@ $fullPlayerProperties = json_decode( "{
 
 function gen_player_table( $players, $properties, $order=NULL, $boxes=false )
 {
-	echo "<table class='players'>";
+	//echo "<table class='players'>";
+    echo "<table class='table table-striped table-bordered table-condensed'>";
 	echo "<tr>";
-	echo "<th>";
+	echo "<th style='display: none'>";
 	echo "</th>";
 	foreach( $properties as $key=>$prop )
 	{
@@ -685,7 +686,7 @@ function gen_player_table( $players, $properties, $order=NULL, $boxes=false )
 		foreach( $players as $key=>$player )
 		{
 			echo "<tr class='player'>";
-			echo "<td>";
+			echo "<td style='display: none'>";
 			if( $boxes )
 			{
 				echo "<input type='checkbox' name='id' value='$key' />";
@@ -708,7 +709,7 @@ function gen_player_table( $players, $properties, $order=NULL, $boxes=false )
 		{
 			$player = $players[$key];
 			echo "<tr class='player'>";
-			echo "<td>";
+			echo "<td style='display: none'>";
 			if( $boxes )
 			{
 				echo "<input type='checkbox' name='id' value='$key' />";

@@ -1,16 +1,37 @@
 <?php
 require_once("require/rgame.php");
 require_once("require/secure.php");
-echo "Welcome " . First() . " " . Last();
-if( Type() != "NONE" ) echo ", " . Team();
-if( is_maintenance() )
+
+$first = First();
+$last = Last();
+/*if ( Type() != "NONE" )
 {
-	echo "<p><strong style='color:red'>WARNING: WEBSITE IS IN MAINTENANCE MODE, REGULAR USERS CAN NOT LOG IN. THIS CAN BE CHANGED VIA THE <a href='game.php'>GAME SETTINGS</a> PAGE.</strong></p>";
+    $team = Team();
+    echo "<div class='navbar-header'><a class='navbar-brand' href='#'>$first $last, $team</a></div>";
 }
+else
+{
+    echo "<div class='navbar-header'><a class='navbar-brand' href='#'>$first $last</a></div>";
+}*/
+echo "<div class='navbar-header col-md-2'><h4 style='margin-top: 15px; height: 25px; padding: 0; color: white'>Humans vs Zombies</h4></div>";
+echo "<div class='navbar-collapse collapse'>";
+echo "<ul class='nav navbar-nav navbar-right'>";
+echo "<li style='margin-top: 15px; height: 25px; padding: 0; padding-right: 10px; color: white'>$first $last</li>";
+echo "</ul>";
+
+echo "<ul class='nav navbar-nav'>";
 if( !is_game_started() )
 {
-	echo "<p>Game will start on " . date('l F jS \a\t g:iA', strtotime(get_game_start())) . "</p>";
+
+    echo "<li style='margin-top: 15px; height: 25px; padding: 0; padding-right: 10px; color: white'>Game will start on " . date('l F jS \a\t g:iA', strtotime(get_game_start())) . "</li>";
+    //echo "<p>Game will start on " . date('l F jS \a\t g:iA', strtotime(get_game_start())) . "</p>";
 }
+if( is_maintenance() )
+{
+	echo "<li style='margin-top: 15px; height: 25px; padding: 0; color: red'>MAINTENANCE MODE ENABLED. SEE <a style='padding: 0; display: inline' href='game.php'>GAME SETTINGS</a> PAGE FOR MORE INFO</li>";
+}
+echo "</ul></div>";
+
 $imp = GetImpersonate();
 if( $imp != NULL )
 {

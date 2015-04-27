@@ -18,8 +18,9 @@ else
 }
 $admin_email = get_mail_email();
 ?>
-<p>The main moderator e-mail address is <?php echo "<a href='$admin_email'>$admin_email</a>"; ?>.</p>
-<table>
+<div class="row"><div class="col-md-12"><h4>The main moderator e-mail address is <?php echo "<a href='$admin_email'>$admin_email</a>"; ?>.</h4></div></div>
+<div class="row"><div class="col-md-6">
+<table class='table table-striped table-bordered table-condensed'>
 <tr><th>Name</th><th>Email</th><th>Score</th></tr>
 <?php
 $admins = get_players("ADMIN");
@@ -29,7 +30,8 @@ foreach($admins as $admin)
 }
 ?>
 </table>
-
+</div>
+</div>
 <?php
 if( $securemode ) page_foot();
 else

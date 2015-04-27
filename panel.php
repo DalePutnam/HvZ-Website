@@ -43,28 +43,35 @@ if( isset($_REQUEST["action"]) )
 		reload_self("Subscribed.");
 	}
 }
-page_head();
-echo "<p>Welcome, " . First() . " " . Last() . ".</p>";
+page_head();?>
+<div class="row">
+<div class='col-md-3'><h3>Welcome, <?php echo First(); ?> <?php echo Last(); ?></h3>
+<?php
 if( IsAdmin() ) {
 	?>
-	<form method="post" action="">
-	Set Your Score: <input name="score" value="<?php echo Score(); ?>" /><br/>
-	<input type="submit" name="action" value="Set My Score" /><br/>
-	</form>
+    <form method="post" action="">
+        <div class="form-group">
+            <label>Set Your Score: </label>
+            <input class="form-control" name="score" value="<?php echo Score(); ?>" />
+        </div>
+        <input class="btn btn-default" type="submit" name="action" value="Set My Score" /><br/>
+    </form>
 	<?php
 }
 else
 {
-	echo "<p>";
+	echo "<div class='row'>";
+    echo "<div class='col-md-12'>";
 	if( is_game_started() )
 	{
-		echo "The game is currently <strong>active</strong>.<br/>";
+		echo "The game is currently <strong>active</strong>.";
 	}
 	else
 	{
-		echo "The game has not yet begun. It will start " . date('l F jS \a\t g:iA', strtotime(get_game_start())) . ".";
+        $date = date('l F jS \a\t g:iA', strtotime(get_game_start()));
+		echo "<div>The game has not yet begun. It will start $date</div>";
 	}
-	echo "</p>";
+	echo "</div></div>";
 	?>
 	<?php if( IsPlayer() ) { ?>
 	<p>To send an e-mail to all players, e-mail <a href="mailto:hvz@csclub.uwaterloo.ca">hvz@csclub.uwaterloo.ca</a>.
@@ -81,7 +88,7 @@ else
 			$button = "Subscribe";
 		}
 		?>
-		<p>You are currently <?php echo $text; ?> from the all players mailing list. <form method="post" action=""><input type="submit" name="action" value="<?php echo $button; ?>" /></form></p>
+		<p>You are currently <?php echo $text; ?> from the all players mailing list. <form method="post" action=""><input type="submit" class="btn btn-primary" name="action" value="<?php echo $button; ?>" /></form></p>
 	<?php }
     // Inventory visible for humans or spectators
     if( IsHuman() || IsSpectator() ) {
@@ -110,17 +117,19 @@ else
 		{
 		?>
 			Your score is currently <strong>visible</strong> to other players.<br/>
-			<form method="post" action=""><input type="submit" name="action" value="Hide Score" /></form>
+			<form method="post" action=""><input type="submit" class="btn btn-primary" name="action" value="Hide Score" /></form>
 		<?php
 		}
 		else
 		{
 		?>
 			Your score is currently <strong>hidden</strong> from other players.<br/>
-			<form method="post" action=""><input type="submit" name="action" value="Show Score" /></form>
+			<form method="post" action=""><input type="submit" class="btn btn-primary" name="action" value="Show Score" /></form>
 		<?php
 		}
 	}
 }
 page_foot();
 ?>
+</div>
+</div>

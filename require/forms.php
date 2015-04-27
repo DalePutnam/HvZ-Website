@@ -37,9 +37,9 @@ function stun_value_editor($stun_scores)
 
 function team_select($name, $def)
 {
-    $selected = "selected='true'";
+    $selected = "selected='false'";
     ?>
-    <select name="<?php echo $name; ?>">
+    <select class="form-control" required="true" name="<?php echo $name; ?>">
         <option value="NONE" <?php if($def == "NONE") echo $selected; ?>>None</option>
         <option value="HUMAN" <?php if($def == "HUMAN") echo $selected; ?>>Human</option>
         <option value="ZOMBIE" <?php if($def == "ZOMBIE") echo $selected; ?>>Zombie</option>
@@ -68,20 +68,28 @@ function player_form($data = NULL, $showtype = TRUE)
 	}
 	$selected = "selected='true'";
 	?>
-	<form action="" method="post">
+	<form class="form-horizontal" action="" method="post">
 	<input name="id" type="hidden" value="<?php echo $id;?>" />
-	First Name:&nbsp;<input name="first_name" value="<?php echo $first;?>"/><br/>
-	Last Name:&nbsp;<input name="last_name" value="<?php echo $last;?>"/><br/>
-	Email:&nbsp;<input name="email" value="<?php echo $email;?>"/><br/>
+	<div class="form-group">
+        <div class="col-md-12"><input class="form-control" placeholder="First Name" name="first_name" required="true" value="<?php echo $first;?>"/></div>
+    </div>
+	<div class="form-group">
+        <div class="col-md-12"><input class="form-control" placeholder="Last Name" name="last_name" required="true" value="<?php echo $last;?>"/></div>
+    </div>
+	<div class="form-group">
+        <div class="col-md-12"><input class="form-control" placeholder="Email" name="email" required="true" value="<?php echo $email;?>"/></div>
+    </div>
 	<?php if( !is_null($data) ) { ?>
-		Code:&nbsp;<input name="code" value="<?php echo $code;?>"/><br/>
+        <div class="form-group">
+            <div class="col-md-12"><input class="form-control" placeholder="Code" name="code" required="true" value="<?php echo $code;?>"/></div>
+        </div>
 	<?php } 
 	if( $showtype ) 
 	{
 	?>
-		Type:&nbsp;
-        <?php team_select("type", $type); ?>
-        <br/>
+        <div class="form-group">
+            <div class="col-md-12"><?php team_select("type", $type); ?></div>
+        </div>
 		<?php
 	}
 	else
@@ -91,13 +99,21 @@ function player_form($data = NULL, $showtype = TRUE)
 		<?php
 	}
 	?>
-	<?php if(is_null($data) && !is_game_started()) { ?>
-	Enter Original Zombie Lottery:&nbsp;<input type="checkbox" name="oz" value="yes" /><br/>
-	<?php } ?>
-	<input type="submit" value="<?php if(is_null($data)) { echo "Add"; } else { echo "Commit"; }?>" name="action" />
-	<?php if(!is_null($data)) { ?>
-		<input type="submit" value="Cancel" name="action" />
-	<?php } ?>
+    <div class="form-group">
+        <div class="col-md-4">
+            <input class="btn btn-default btn-block" type="submit" value="<?php if(is_null($data)) { echo "Add"; } else { echo "Commit"; }?>" name="action" />
+        </div>
+        <?php if(is_null($data) && !is_game_started()) { ?>
+            <div class="col-md-8 checkbox">
+                <label><input type="checkbox" name="oz" value="yes" /> Enter Original Zombie Lottery</label>
+            </div>
+        <?php } ?>
+        <?php if(!is_null($data)) { ?>
+            <div class="col-md-4">
+                <input class="btn btn-default btn-block" type="submit" value="Cancel" name="action" />
+            </div>
+        <?php } ?>
+    </div>
 	</form>
 	<?php
 }
