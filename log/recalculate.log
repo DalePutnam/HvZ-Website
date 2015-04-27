@@ -1,40 +1,40 @@
-Recalculation beginning at 2015-02-06 16:29:05
-Found 158 ratified stuns.
+Recalculation beginning at 2015-04-27 02:41:23
+Found 159 ratified stuns.
 Ignoring player 1106 getting 5 points for killing 1008 at 2015-02-02 00:00:00, marking  as helped because they are a ZOMBIE
 Ignoring player 1019 getting 5 points for killing 1000 at 2015-02-02 00:04:00, marking  as helped because they are a ZOMBIE
-Giving player 1275 4 points for killing 1045 at 2015-02-02 00:14:00, marking 1106 as helped
-Giving player 1275 5 points for killing 1242 at 2015-02-02 00:15:00, marking  as helped
+Ignoring player 1275 getting 4 points for killing 1045 at 2015-02-02 00:14:00, marking 1106 as helped because they are a ZOMBIE
+Ignoring player 1275 getting 5 points for killing 1242 at 2015-02-02 00:15:00, marking  as helped because they are a ZOMBIE
 Giving player 1141 4 points for killing 1082 at 2015-02-02 00:17:00, marking 1051 as helped
-Giving player 1275 4 points for killing 1000 at 2015-02-02 00:21:00, marking  as helped
-Ignoring player 1196 getting 5 points for killing 1184 at 2015-02-02 00:30:00, marking  as helped because they are a ZOMBIE
+Ignoring player 1275 getting 4 points for killing 1000 at 2015-02-02 00:21:00, marking  as helped because they are a ZOMBIE
 Ignoring player 1196 getting 4 points for killing 1082 at 2015-02-02 00:30:00, marking  as helped because they are a ZOMBIE
-Giving player 1043 3 points for killing 1000 at 2015-02-02 00:31:00, marking  as helped
-Giving player 1043 4 points for killing 1242 at 2015-02-02 00:31:00, marking  as helped
+Ignoring player 1196 getting 5 points for killing 1184 at 2015-02-02 00:30:00, marking  as helped because they are a ZOMBIE
+Ignoring player 1043 getting 4 points for killing 1242 at 2015-02-02 00:31:00, marking  as helped because they are a ZOMBIE
+Ignoring player 1043 getting 3 points for killing 1000 at 2015-02-02 00:31:00, marking  as helped because they are a ZOMBIE
 Giving player 1037 5 points for killing 1104 at 2015-02-02 05:15:00, marking  as helped
 Giving player 1037 5 points for killing 1230 at 2015-02-02 06:45:00, marking  as helped
 Giving player 1121 2 points for killing 1000 at 2015-02-02 07:55:00, marking  as helped
 Giving player 1121 4 points for killing 1104 at 2015-02-02 07:55:00, marking  as helped
-Shaving 1 previous entries from zombie 1008 that occurred before 2015-02-02 00:25:00
-Ignoring player 999 getting 5 points for killing 1008 at 2015-02-02 08:25:00, marking  as helped because they are a ZOMBIE
 Shaving 2 previous entries from zombie 1000 that occurred before 2015-02-02 00:25:00
-Ignoring player 999 getting 3 points for killing 1000 at 2015-02-02 08:25:00, marking  as helped because they are a ZOMBIE
+Giving player 999 3 points for killing 1000 at 2015-02-02 08:25:00, marking  as helped
+Shaving 1 previous entries from zombie 1008 that occurred before 2015-02-02 00:25:00
+Giving player 999 5 points for killing 1008 at 2015-02-02 08:25:00, marking  as helped
 Ignoring player 1019 getting 4 points for killing 1008 at 2015-02-02 09:20:00, marking  as helped because they are a ZOMBIE
 Ignoring player 1019 getting 5 points for killing 1026 at 2015-02-02 09:25:00, marking  as helped because they are a ZOMBIE
 Shaving 1 previous entries from zombie 1000 that occurred before 2015-02-02 01:31:00
 Ignoring player 1017 getting 3 points for killing 1000 at 2015-02-02 09:31:00, marking  as helped because they are a ZOMBIE
 Ignoring player 1018 getting 3 points for killing 1104 at 2015-02-02 09:35:00, marking  as helped because they are a ZOMBIE
 Giving player 1224 3 points for killing 1008 at 2015-02-02 10:33:00, marking  as helped
+Giving player 1224 2 points for killing 1000 at 2015-02-02 10:35:00, marking  as helped
 Shaving 2 previous entries from zombie 1242 that occurred before 2015-02-02 02:35:00
 Giving player 1224 5 points for killing 1242 at 2015-02-02 10:35:00, marking  as helped
-Giving player 1224 2 points for killing 1000 at 2015-02-02 10:35:00, marking  as helped
 Shaving 2 previous entries from zombie 1082 that occurred before 2015-02-02 04:07:00
 Ignoring player 1215 getting 5 points for killing 1082 at 2015-02-02 12:07:00, marking  as helped because they are a ZOMBIE
 Shaving 1 previous entries from zombie 1184 that occurred before 2015-02-02 04:07:00
 Ignoring player 1215 getting 5 points for killing 1184 at 2015-02-02 12:07:00, marking  as helped because they are a ZOMBIE
 Giving player 1096 5 points for killing 1093 at 2015-02-02 12:50:00, marking  as helped
+Ignoring player 1019 getting 1 points for killing 1000 at 2015-02-02 12:55:00, marking  as helped because they are a ZOMBIE
 Ignoring player 1019 getting 4 points for killing 1184 at 2015-02-02 12:55:00, marking  as helped because they are a ZOMBIE
 Ignoring player 1019 getting 2 points for killing 1104 at 2015-02-02 12:55:00, marking  as helped because they are a ZOMBIE
-Ignoring player 1019 getting 1 points for killing 1000 at 2015-02-02 12:55:00, marking  as helped because they are a ZOMBIE
 Ignoring player 1215 getting 5 points for killing 1245 at 2015-02-02 12:59:00, marking  as helped because they are a ZOMBIE
 Giving player 1012 3 points for killing 1184 at 2015-02-02 14:30:00, marking  as helped
 Ignoring player 1106 getting 4 points for killing 1082 at 2015-02-02 14:42:00, marking  as helped because they are a ZOMBIE
@@ -47,27 +47,27 @@ Ignoring player 1106 getting 0 points for killing 1000 at 2015-02-02 15:41:00, m
 Giving player 1012 3 points for killing 1082 at 2015-02-02 15:45:00, marking  as helped
 Ignoring player 1018 getting 4 points for killing 1245 at 2015-02-02 15:45:00, marking  as helped because they are a ZOMBIE
 Ignoring player 1005 getting 5 points for killing 1266 at 2015-02-02 16:20:00, marking  as helped because they are a ZOMBIE
-Giving player 1051 0 points for killing 1184 at 2015-02-02 16:45:00, marking  as helped
+Ignoring player 1051 getting 0 points for killing 1184 at 2015-02-02 16:45:00, marking  as helped because they are a ZOMBIE
 Giving player 1168 4 points for killing 997 at 2015-02-02 17:19:00, marking  as helped
 Shaving 3 previous entries from zombie 1104 that occurred before 2015-02-02 10:30:00
 Ignoring player 1106 getting 4 points for killing 1104 at 2015-02-02 18:30:00, marking  as helped because they are a ZOMBIE
-Giving player 1170 2 points for killing 1082 at 2015-02-02 18:30:00, marking  as helped
+Ignoring player 1170 getting 2 points for killing 1082 at 2015-02-02 18:30:00, marking  as helped because they are a ZOMBIE
 Ignoring player 1225 getting 5 points for killing 1278 at 2015-02-02 18:32:00, marking  as helped because they are a ZOMBIE
 Ignoring player 1225 getting 3 points for killing 1104 at 2015-02-02 18:33:00, marking  as helped because they are a ZOMBIE
 Shaving 1 previous entries from zombie 1242 that occurred before 2015-02-02 10:45:00
 Ignoring player 1182 getting 4 points for killing 1242 at 2015-02-02 18:45:00, marking  as helped because they are a ZOMBIE
-Ignoring player 999 getting 0 points for killing 1184 at 2015-02-02 18:45:00, marking  as helped because they are a ZOMBIE
+Giving player 999 0 points for killing 1184 at 2015-02-02 18:45:00, marking  as helped
 Ignoring player 1106 getting 3 points for killing 997 at 2015-02-02 18:50:00, marking  as helped because they are a ZOMBIE
-Shaving 1 previous entries from zombie 1230 that occurred before 2015-02-02 11:00:00
-Ignoring player 1225 getting 5 points for killing 1230 at 2015-02-02 19:00:00, marking  as helped because they are a ZOMBIE
-Ignoring player 1106 getting 5 points for killing 1218 at 2015-02-02 19:00:00, marking  as helped because they are a ZOMBIE
 Shaving 4 previous entries from zombie 1000 that occurred before 2015-02-02 11:00:00
 Ignoring player 1178 getting 4 points for killing 1000 at 2015-02-02 19:00:00, marking  as helped because they are a ZOMBIE
+Ignoring player 1106 getting 5 points for killing 1218 at 2015-02-02 19:00:00, marking  as helped because they are a ZOMBIE
 Ignoring player 1106 getting 4 points for killing 1093 at 2015-02-02 19:00:00, marking  as helped because they are a ZOMBIE
+Shaving 1 previous entries from zombie 1230 that occurred before 2015-02-02 11:00:00
+Ignoring player 1225 getting 5 points for killing 1230 at 2015-02-02 19:00:00, marking  as helped because they are a ZOMBIE
 Shaving 1 previous entries from zombie 1000 that occurred before 2015-02-02 13:52:00
-Giving player 1051 4 points for killing 1000 at 2015-02-02 21:52:00, marking  as helped
+Ignoring player 1051 getting 4 points for killing 1000 at 2015-02-02 21:52:00, marking  as helped because they are a ZOMBIE
 Shaving 2 previous entries from zombie 1184 that occurred before 2015-02-02 14:00:00
-Giving player 1051 2 points for killing 1184 at 2015-02-02 22:00:00, marking  as helped
+Ignoring player 1051 getting 2 points for killing 1184 at 2015-02-02 22:00:00, marking  as helped because they are a ZOMBIE
 Ignoring player 1215 getting 2 points for killing 997 at 2015-02-02 23:00:00, marking  as helped because they are a ZOMBIE
 Ignoring player 1106 getting 3 points for killing 1242 at 2015-02-02 23:30:00, marking  as helped because they are a ZOMBIE
 Giving player 1141 4 points for killing 1178 at 2015-02-02 23:31:00, marking 1051 as helped
@@ -82,28 +82,28 @@ Shaving 4 previous entries from zombie 997 that occurred before 2015-02-03 02:30
 Giving player 994 5 points for killing 997 at 2015-02-03 10:30:00, marking  as helped
 Shaving 3 previous entries from zombie 1242 that occurred before 2015-02-03 02:32:00
 Ignoring player 1103 getting 5 points for killing 1242 at 2015-02-03 10:32:00, marking  as helped because they are a ZOMBIE
-Giving player 994 4 points for killing 997 at 2015-02-03 11:00:00, marking  as helped
 Shaving 4 previous entries from zombie 1082 that occurred before 2015-02-03 03:00:00
 Giving player 994 5 points for killing 1082 at 2015-02-03 11:00:00, marking  as helped
+Giving player 994 4 points for killing 997 at 2015-02-03 11:00:00, marking  as helped
 Ignoring player 1094 getting 5 points for killing 1215 at 2015-02-03 11:15:00, marking  as helped because they are a ZOMBIE
 Ignoring player 1094 getting 4 points for killing 1215 at 2015-02-03 11:35:00, marking  as helped because they are a ZOMBIE
 Shaving 2 previous entries from zombie 1245 that occurred before 2015-02-03 04:33:00
 Ignoring player 1196 getting 5 points for killing 1245 at 2015-02-03 12:33:00, marking  as helped because they are a ZOMBIE
 Ignoring player 1094 getting 4 points for killing 1242 at 2015-02-03 12:34:00, marking  as helped because they are a ZOMBIE
 Ignoring player 1106 getting 4 points for killing 1082 at 2015-02-03 12:35:00, marking  as helped because they are a ZOMBIE
-Ignoring player 1196 getting 4 points for killing 1104 at 2015-02-03 14:00:00, marking  as helped because they are a ZOMBIE
+Shaving 1 previous entries from zombie 1218 that occurred before 2015-02-03 06:00:00
+Ignoring player 1043 getting 5 points for killing 1218 at 2015-02-03 14:00:00, marking  as helped because they are a ZOMBIE
 Shaving 4 previous entries from zombie 1184 that occurred before 2015-02-03 06:00:00
 Ignoring player 1196 getting 5 points for killing 1184 at 2015-02-03 14:00:00, marking  as helped because they are a ZOMBIE
-Shaving 1 previous entries from zombie 1218 that occurred before 2015-02-03 06:00:00
-Giving player 1043 5 points for killing 1218 at 2015-02-03 14:00:00, marking  as helped
+Ignoring player 1196 getting 4 points for killing 1104 at 2015-02-03 14:00:00, marking  as helped because they are a ZOMBIE
 Ignoring player 1124 getting 3 points for killing 1104 at 2015-02-03 14:55:00, marking  as helped because they are a ZOMBIE
 Ignoring player 1192 getting 5 points for killing 1159 at 2015-02-03 15:28:00, marking  as helped because they are a ZOMBIE
 Ignoring player 1260 getting 3 points for killing 1242 at 2015-02-03 16:21:00, marking  as helped because they are a ZOMBIE
 Ignoring player 1260 getting 2 points for killing 1104 at 2015-02-03 16:24:00, marking  as helped because they are a ZOMBIE
 Giving player 1037 5 points for killing 1229 at 2015-02-03 16:27:00, marking  as helped
-Giving player 1037 5 points for killing 1227 at 2015-02-03 16:30:00, marking  as helped
 Shaving 1 previous entries from zombie 1230 that occurred before 2015-02-03 08:30:00
 Giving player 1037 5 points for killing 1230 at 2015-02-03 16:30:00, marking  as helped
+Giving player 1037 5 points for killing 1227 at 2015-02-03 16:30:00, marking  as helped
 Ignoring player 1106 getting 2 points for killing 1242 at 2015-02-03 16:40:00, marking  as helped because they are a ZOMBIE
 Shaving 3 previous entries from zombie 1008 that occurred before 2015-02-03 09:00:00
 Ignoring player 1261 getting 5 points for killing 1008 at 2015-02-03 17:00:00, marking  as helped because they are a ZOMBIE
@@ -113,30 +113,30 @@ Giving player 1068 4 points for killing 1229 at 2015-02-03 18:15:00, marking  as
 Ignoring player 1106 getting 4 points for killing 1184 at 2015-02-03 18:24:00, marking  as helped because they are a ZOMBIE
 Ignoring player 1106 getting 3 points for killing 1082 at 2015-02-03 18:26:00, marking  as helped because they are a ZOMBIE
 Shaving 2 previous entries from zombie 1215 that occurred before 2015-02-03 11:42:00
-Giving player 1051 4 points for killing 1215 at 2015-02-03 19:42:00, marking  as helped
+Ignoring player 1051 getting 4 points for killing 1215 at 2015-02-03 19:42:00, marking  as helped because they are a ZOMBIE
 Shaving 1 previous entries from zombie 1026 that occurred before 2015-02-03 11:44:00
-Giving player 1051 5 points for killing 1026 at 2015-02-03 19:44:00, marking  as helped
+Ignoring player 1051 getting 5 points for killing 1026 at 2015-02-03 19:44:00, marking  as helped because they are a ZOMBIE
 Shaving 1 previous entries from zombie 1104 that occurred before 2015-02-03 11:44:00
-Giving player 1051 2 points for killing 1104 at 2015-02-03 19:44:00, marking  as helped
-Giving player 1051 3 points for killing 1184 at 2015-02-03 19:45:00, marking  as helped
+Ignoring player 1051 getting 2 points for killing 1104 at 2015-02-03 19:44:00, marking  as helped because they are a ZOMBIE
+Ignoring player 1051 getting 3 points for killing 1184 at 2015-02-03 19:45:00, marking  as helped because they are a ZOMBIE
 Ignoring player 1046 getting 4 points for killing 1207 at 2015-02-03 20:00:00, marking  as helped because they are a ZOMBIE
 Shaving 1 previous entries from zombie 1082 that occurred before 2015-02-03 12:10:00
-Giving player 1174 2 points for killing 1082 at 2015-02-03 20:10:00, marking 1165 as helped
+Ignoring player 1174 getting 2 points for killing 1082 at 2015-02-03 20:10:00, marking 1165 as helped because they are a ZOMBIE
 Giving player 1096 3 points for killing 1207 at 2015-02-03 20:40:00, marking  as helped
 Giving player 1037 4 points for killing 1253 at 2015-02-03 20:47:00, marking 1096 as helped
 Shaving 1 previous entries from zombie 1178 that occurred before 2015-02-03 12:50:00
 Giving player 1096 5 points for killing 1178 at 2015-02-03 20:50:00, marking  as helped
 Shaving 2 previous entries from zombie 997 that occurred before 2015-02-03 13:25:00
-Giving player 1275 5 points for killing 997 at 2015-02-03 21:25:00, marking  as helped
+Ignoring player 1275 getting 5 points for killing 997 at 2015-02-03 21:25:00, marking  as helped because they are a ZOMBIE
 Ignoring player 1106 getting 1 points for killing 1104 at 2015-02-03 21:32:00, marking  as helped because they are a ZOMBIE
 Shaving 1 previous entries from zombie 1082 that occurred before 2015-02-03 15:20:00
-Giving player 1051 3 points for killing 1082 at 2015-02-03 23:20:00, marking  as helped
+Ignoring player 1051 getting 3 points for killing 1082 at 2015-02-03 23:20:00, marking  as helped because they are a ZOMBIE
 Shaving 2 previous entries from zombie 1242 that occurred before 2015-02-03 15:22:00
-Giving player 1051 3 points for killing 1242 at 2015-02-03 23:22:00, marking  as helped
+Ignoring player 1051 getting 3 points for killing 1242 at 2015-02-03 23:22:00, marking  as helped because they are a ZOMBIE
 Shaving 2 previous entries from zombie 1000 that occurred before 2015-02-03 15:23:00
-Giving player 1051 5 points for killing 1000 at 2015-02-03 23:23:00, marking  as helped
+Ignoring player 1051 getting 5 points for killing 1000 at 2015-02-03 23:23:00, marking  as helped because they are a ZOMBIE
 Shaving 2 previous entries from zombie 1104 that occurred before 2015-02-03 15:28:00
-Giving player 1051 2 points for killing 1104 at 2015-02-03 23:28:00, marking  as helped
+Ignoring player 1051 getting 2 points for killing 1104 at 2015-02-03 23:28:00, marking  as helped because they are a ZOMBIE
 Ignoring player 998 getting 4 points for killing 1000 at 2015-02-03 23:40:00, marking  as helped because they are a ZOMBIE
 Ignoring player 1106 getting 3 points for killing 1215 at 2015-02-03 23:44:00, marking  as helped because they are a ZOMBIE
 Shaving 1 previous entries from zombie 1266 that occurred before 2015-02-04 00:20:00
@@ -145,7 +145,7 @@ Shaving 3 previous entries from zombie 1215 that occurred before 2015-02-04 00:2
 Ignoring player 1256 getting 5 points for killing 1215 at 2015-02-04 08:20:00, marking  as helped because they are a ZOMBIE
 Shaving 1 previous entries from zombie 1245 that occurred before 2015-02-04 00:22:00
 Ignoring player 1256 getting 5 points for killing 1245 at 2015-02-04 08:22:00, marking  as helped because they are a ZOMBIE
-Giving player 1275 4 points for killing 1215 at 2015-02-04 08:30:00, marking  as helped
+Ignoring player 1275 getting 4 points for killing 1215 at 2015-02-04 08:30:00, marking  as helped because they are a ZOMBIE
 Shaving 3 previous entries from zombie 1242 that occurred before 2015-02-04 01:30:00
 Ignoring player 1163 getting 5 points for killing 1242 at 2015-02-04 09:30:00, marking  as helped because they are a ZOMBIE
 Shaving 1 previous entries from zombie 1227 that occurred before 2015-02-04 02:20:00
@@ -153,7 +153,7 @@ Giving player 994 5 points for killing 1227 at 2015-02-04 10:20:00, marking  as 
 Shaving 2 previous entries from zombie 1000 that occurred before 2015-02-04 03:21:00
 Giving player 1037 5 points for killing 1000 at 2015-02-04 11:21:00, marking  as helped
 Shaving 1 previous entries from zombie 1178 that occurred before 2015-02-04 04:15:00
-Giving player 1043 5 points for killing 1178 at 2015-02-04 12:15:00, marking  as helped
+Ignoring player 1043 getting 5 points for killing 1178 at 2015-02-04 12:15:00, marking  as helped because they are a ZOMBIE
 Shaving 1 previous entries from zombie 1206 that occurred before 2015-02-04 04:26:00
 Ignoring player 1007 getting 5 points for killing 1206 at 2015-02-04 12:26:00, marking  as helped because they are a ZOMBIE
 Ignoring player 1179 getting 4 points for killing 1245 at 2015-02-04 12:30:00, marking  as helped because they are a ZOMBIE
@@ -169,27 +169,27 @@ Shaving 2 previous entries from zombie 1215 that occurred before 2015-02-04 09:1
 Giving player 1168 5 points for killing 1215 at 2015-02-04 17:12:00, marking  as helped
 Ignoring player 1106 getting 5 points for killing 1018 at 2015-02-04 18:35:00, marking  as helped because they are a ZOMBIE
 Ignoring player 1113 getting 5 points for killing 993 at 2015-02-04 18:45:00, marking  as helped because they are a ZOMBIE
-Shaving 1 previous entries from zombie 1000 that occurred before 2015-02-04 11:23:00
-Ignoring player 1113 getting 5 points for killing 1000 at 2015-02-04 19:23:00, marking  as helped because they are a ZOMBIE
 Shaving 4 previous entries from zombie 1104 that occurred before 2015-02-04 11:23:00
 Ignoring player 1113 getting 5 points for killing 1104 at 2015-02-04 19:23:00, marking  as helped because they are a ZOMBIE
+Shaving 1 previous entries from zombie 1000 that occurred before 2015-02-04 11:23:00
+Ignoring player 1113 getting 5 points for killing 1000 at 2015-02-04 19:23:00, marking  as helped because they are a ZOMBIE
 Ignoring player 1114 getting 4 points for killing 999 at 2015-02-04 20:00:00, marking  as helped because they are a ZOMBIE
-Ignoring player 1046 getting 5 points for killing 1279 at 2015-02-04 20:33:00, marking  as helped because they are a ZOMBIE
 Shaving 1 previous entries from zombie 997 that occurred before 2015-02-04 12:33:00
 Ignoring player 1046 getting 5 points for killing 997 at 2015-02-04 20:33:00, marking  as helped because they are a ZOMBIE
+Ignoring player 1046 getting 5 points for killing 1279 at 2015-02-04 20:33:00, marking  as helped because they are a ZOMBIE
 Giving player 1195 5 points for killing 1083 at 2015-02-04 22:35:00, marking  as helped
 Shaving 3 previous entries from zombie 1207 that occurred before 2015-02-04 16:05:00
 Giving player 1012 5 points for killing 1207 at 2015-02-05 00:05:00, marking  as helped
-Giving player 1188 3 points for killing 1207 at 2015-02-05 01:30:00, marking 998 as helped
-Giving player 1188 4 points for killing 1106 at 2015-02-05 01:30:00, marking 1012 as helped
 Giving player 1188 4 points for killing 1104 at 2015-02-05 01:30:00, marking  as helped
-Shaving 1 previous entries from zombie 1230 that occurred before 2015-02-04 20:20:00
-Giving player 1037 5 points for killing 1230 at 2015-02-05 04:20:00, marking  as helped
+Giving player 1188 4 points for killing 1106 at 2015-02-05 01:30:00, marking 1012 as helped
+Giving player 1188 3 points for killing 1207 at 2015-02-05 01:30:00, marking 998 as helped
 Shaving 1 previous entries from zombie 1227 that occurred before 2015-02-04 20:20:00
 Giving player 1037 5 points for killing 1227 at 2015-02-05 04:20:00, marking  as helped
+Shaving 1 previous entries from zombie 1230 that occurred before 2015-02-04 20:20:00
+Giving player 1037 5 points for killing 1230 at 2015-02-05 04:20:00, marking  as helped
 Giving player 1195 5 points for killing 1117 at 2015-02-05 08:45:00, marking  as helped
-Giving player 1031 5 points for killing 1003 at 2015-02-05 09:55:00, marking  as helped
-Giving player 1031 5 points for killing 1094 at 2015-02-05 11:30:00, marking  as helped
+Ignoring player 1031 getting 5 points for killing 1003 at 2015-02-05 09:55:00, marking  as helped because they are a ZOMBIE
+Ignoring player 1031 getting 5 points for killing 1094 at 2015-02-05 11:30:00, marking  as helped because they are a ZOMBIE
 Giving player 1015 5 points for killing 1016 at 2015-02-05 13:00:00, marking  as helped
 Shaving 1 previous entries from zombie 1215 that occurred before 2015-02-05 05:35:00
 Ignoring player 1136 getting 5 points for killing 1215 at 2015-02-05 13:35:00, marking  as helped because they are a ZOMBIE
@@ -198,17 +198,17 @@ Shaving 1 previous entries from zombie 1230 that occurred before 2015-02-05 06:2
 Ignoring player 1179 getting 5 points for killing 1230 at 2015-02-05 14:25:00, marking  as helped because they are a ZOMBIE
 Giving player 1012 4 points for killing 1215 at 2015-02-05 14:41:00, marking  as helped
 Giving player 1012 5 points for killing 1260 at 2015-02-05 14:52:00, marking  as helped
+Giving player 1012 3 points for killing 1215 at 2015-02-05 15:51:00, marking  as helped
 Shaving 1 previous entries from zombie 1000 that occurred before 2015-02-05 07:51:00
 Giving player 1012 5 points for killing 1000 at 2015-02-05 15:51:00, marking  as helped
-Giving player 1012 3 points for killing 1215 at 2015-02-05 15:51:00, marking  as helped
 Ignoring player 1244 getting 5 points for killing 1005 at 2015-02-05 17:35:00, marking  as helped because they are a ZOMBIE
-Giving player 1085 4 points for killing 1005 at 2015-02-05 18:00:00, marking  as helped
-Shaving 2 previous entries from zombie 1242 that occurred before 2015-02-05 11:45:00
-Ignoring player 1136 getting 5 points for killing 1242 at 2015-02-05 19:45:00, marking  as helped because they are a ZOMBIE
-Shaving 1 previous entries from zombie 1106 that occurred before 2015-02-05 11:45:00
-Ignoring player 1136 getting 5 points for killing 1106 at 2015-02-05 19:45:00, marking  as helped because they are a ZOMBIE
+Ignoring player 1085 getting 4 points for killing 1005 at 2015-02-05 18:00:00, marking  as helped because they are a ZOMBIE
 Shaving 2 previous entries from zombie 1104 that occurred before 2015-02-05 11:45:00
 Ignoring player 1136 getting 5 points for killing 1104 at 2015-02-05 19:45:00, marking  as helped because they are a ZOMBIE
+Shaving 1 previous entries from zombie 1106 that occurred before 2015-02-05 11:45:00
+Ignoring player 1136 getting 5 points for killing 1106 at 2015-02-05 19:45:00, marking  as helped because they are a ZOMBIE
+Shaving 2 previous entries from zombie 1242 that occurred before 2015-02-05 11:45:00
+Ignoring player 1136 getting 5 points for killing 1242 at 2015-02-05 19:45:00, marking  as helped because they are a ZOMBIE
 Shaving 3 previous entries from zombie 1215 that occurred before 2015-02-06 00:25:00
 Ignoring player 1244 getting 5 points for killing 1215 at 2015-02-06 08:25:00, marking  as helped because they are a ZOMBIE
 Shaving 1 previous entries from zombie 1227 that occurred before 2015-02-06 01:15:00
@@ -216,6 +216,7 @@ Giving player 1096 5 points for killing 1227 at 2015-02-06 09:15:00, marking  as
 Giving player 1186 5 points for killing 1007 at 2015-02-06 09:20:00, marking  as helped
 Shaving 1 previous entries from zombie 1230 that occurred before 2015-02-06 06:20:00
 Giving player 1037 5 points for killing 1230 at 2015-02-06 14:20:00, marking  as helped
+Giving player 1224 5 points for killing 1004 at 2015-04-26 00:00:00, marking  as helped
 Giving player 1082 5 points for killing a human
 Giving player 1184 5 points for killing a human
 Giving player 1104 5 points for killing a human
@@ -254,7 +255,6 @@ Giving player 997 5 points for killing a human
 Giving player 1000 5 points for killing a human
 Giving player 1184 5 points for killing a human
 Giving player 1242 5 points for killing a human
-Giving player 997 5 points for killing a human
 Giving player 1003 5 points for killing a human
 Giving player 1227 5 points for killing a human
 Giving player 1242 5 points for killing a human
@@ -302,6 +302,13 @@ Giving player 1184 5 points for killing a human
 Giving player 1003 5 points for killing a human
 Giving player 1106 5 points for killing a human
 Giving player 998 5 points for killing a human
+Giving player 1106 5 points for killing a human
+Giving player 1093 5 points for killing a human
+Giving player 1136 5 points for killing a human
+Giving player 1106 5 points for killing a human
+Giving player 1106 5 points for killing a human
+Giving player 1106 5 points for killing a human
+Giving player 1184 5 points for killing a human
 Giving player 1106 5 points for killing a human
 Giving player 994 5 points for getting supply code
 Giving player 994 5 points for getting supply code
@@ -372,4 +379,4 @@ Giving player 1275 5 points for getting supply code
 
 
 Final Query:
-INSERT INTO hvz_score_copy (id, score) VALUES ('1106', '56'),('1275', '27'),('1051', '71'),('1141', '10'),('1043', '28'),('1037', '49'),('1121', '11'),('1224', '10'),('1096', '29'),('1012', '62'),('1168', '9'),('1170', '2'),('994', '34'),('1068', '9'),('1165', '1'),('1174', '2'),('1195', '10'),('998', '6'),('1188', '16'),('1031', '10'),('1015', '5'),('1085', '4'),('1186', '5'),('1082', '30'),('1184', '45'),('1104', '50'),('1000', '65'),('1206', '5'),('1242', '35'),('1003', '15'),('1278', '5'),('997', '25'),('1094', '5'),('1227', '5'),('1178', '20'),('1207', '10'),('1215', '50'),('1120', '5'),('1026', '5'),('1093', '5'),('1260', '5'),('1076', '5'),('1238', '25'),('1007', '10'),('1018', '15'),('999', '5'),('1009', '5'),('1017', '20'),('1019', '20'),('1022', '5'),('1028', '5'),('1046', '10'),('1056', '5'),('1067', '5'),('1103', '5'),('1114', '5'),('1124', '5'),('1145', '15'),('1163', '5'),('1181', '5'),('1187', '5'),('1192', '5'),('1196', '5'),('1252', '10'),('1253', '10'),('1261', '5'),('1272', '10')
+INSERT INTO hvz_score_copy (id, score) VALUES ('1106', '76'),('1051', '38'),('1141', '10'),('1037', '49'),('1121', '11'),('999', '13'),('1224', '15'),('1096', '29'),('1012', '62'),('1168', '9'),('994', '34'),('1068', '9'),('1165', '1'),('1043', '11'),('1195', '10'),('1188', '16'),('998', '6'),('1015', '5'),('1186', '5'),('1082', '30'),('1184', '50'),('1104', '50'),('1000', '65'),('1206', '5'),('1242', '35'),('1003', '15'),('1278', '5'),('997', '20'),('1094', '5'),('1227', '5'),('1178', '20'),('1207', '10'),('1215', '50'),('1120', '5'),('1026', '5'),('1093', '10'),('1260', '5'),('1076', '5'),('1238', '25'),('1007', '10'),('1018', '15'),('1136', '5'),('1009', '5'),('1017', '20'),('1019', '20'),('1022', '5'),('1028', '5'),('1046', '10'),('1056', '5'),('1067', '5'),('1103', '5'),('1114', '5'),('1124', '5'),('1145', '15'),('1163', '5'),('1181', '5'),('1187', '5'),('1192', '5'),('1196', '5'),('1252', '10'),('1253', '10'),('1261', '5'),('1272', '10'),('1275', '5')

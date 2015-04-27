@@ -40,5 +40,9 @@
 <li><a href="archive.php">Archive Management</a></li>
 <li><a href="csv.php">CSV</a></li>
 <?php } ?>
+<?php if ( GetImpersonate() ){ ?>
+<li><a href='panel.php?imp_end='>End Impersonation</a></li>
+<?php } else { ?>
 <li><a href="login.php?logout=">Logout</a></li>
+<?php } ?>
 </ul>

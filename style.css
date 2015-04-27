@@ -23,7 +23,7 @@ span.red
 /* css for player list */
 .ui-menu { width: 150px; font-size: 62%; }
 .context-menu { position:absolute; }
-tr.over.player { background-color: yellow; }
+tr.over.player { background-color: yellow !important;}
 
 /* Mail Log */
 table.mail
@@ -84,6 +84,6 @@ body {
 }
 
 .sidebar-spacing>li>a {
-    padding-top: 2px; !important;
-    padding-bottom: 2px; !important;
+    padding-top: 1px; !important;
+    padding-bottom: 1px; !important;
 }

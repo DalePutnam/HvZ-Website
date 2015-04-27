@@ -97,44 +97,9 @@ page_head();?>
         <?php gen_player_table( $players, $namePlayerProperties, $oz_list, false ); ?>
     </div>
 </div>
+</div>
+</div>
 
-<!--<table style="width: 100%;">
-	<tr>
-		<th>OZ Pool (<span id="pn"></span>)</th><?php if( !is_game_started() ) { ?><th>All Players (<span id="an"></span>)</th><?php } ?><th>OZ List (<span id="ln"></span>)</th>
-	</tr>
-	<tr>
-		<td id="pool" style="vertical-align:top;">
-		<?php if( !is_game_started() ) { ?>
-		<div>Add&nbsp;<input id="rand" style="width:40px;" value="0"/>&nbsp;random OZs <button id="go">Go</button></div>
-		<?php } ?>
-		<?php gen_player_table( $players, $namePlayerProperties, $pool_initial, false ); ?>
-		</td>
-        <?php if( !is_game_started() ) { ?>
-		<td id="all" style="vertical-align:top;">
-		<?php gen_player_table( $players, $namePlayerProperties, $all_initial, false ); ?>
-		</td>
-		<?php } ?>
-		<td id="list" style="vertical-align:top;">
-		<form method="post" action="" id="save">
-			<?php
-				foreach($oz_list as $id)
-				{
-					?>
-					<input type="hidden" name="ids[]" value="<?php echo $id; ?>"/>
-					<?php
-				}
-			?>
-			<input type="submit" name="action" value="Save OZ List" id="save_button" style="display:none;" />
-		</form>
-		<?php if( !is_game_started() ) { ?>
-		<div><button id="clear">Clear</button></div>
-		<?php } ?>
-		<?php gen_player_table( $players, $namePlayerProperties, $oz_list, false ); ?>
-		</td>
-	</tr>
-</table>-->
-</div>
-</div>
 <script type="text/javascript">
 	var changes = false;
 	var started = <?php if(is_game_started()) { echo "true"; } else { echo "false"; } ?>;

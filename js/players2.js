@@ -1,5 +1,21 @@
 // contains our data on every player in the game
 var globalPlayerData2 = {};
+
+var modalDialog =
+    '<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">' +
+        '<div class="modal-dialog modal-sm">' +
+            '<div class="modal-content">' +
+                '<div class="modal-body">' +
+                    '<p></p>' +
+                '</div>' +
+                '<div class="modal-footer">' +
+                    '<button type="button" class="btn btn-primary">Confirm</button>' +
+                    '<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>' +
+                '</div>' +
+            '</div>' +
+        '</div>' +
+    '</div>';
+
 function LoadPlayerData2( players )
 {
 	globalPlayerData2 = players;
@@ -141,14 +157,15 @@ PlayerTable2.prototype.buildMenuSystem = function() {
 					}
 					thisTable.getPlayerObj( thisTable.selectedId )
 					$("p", thisTable.aconfirm).text("Are you sure you'd like to perform a '" + name + "' on " + pl + "?");
-					thisTable.aconfirm.dialog( "open" );
+					//thisTable.aconfirm.dialog( "open" );
+                    thisTable.aconfirm.modal("show");
 				}
 				return false;
 			});
 		}
 	});
 	
-	this.aconfirm = $("<div title='Confirm Action'>")
+	/*this.aconfirm = $("<div title='Confirm Action'>")
 		.appendTo( thisTable.parent )
 		.append( $("<p>") )
 		.dialog( {
@@ -156,14 +173,19 @@ PlayerTable2.prototype.buildMenuSystem = function() {
 			modal: true,
 			position: {my:"top", at:"top", of:window},
 			buttons: {
-				Confirm: function( ) {
-					thisTable.aform.submit();
-				},
+				Confirm: ,
 				Cancel : function( ) {
 					$(this).dialog("close");
 				}
 			}
-		});
+		});*/
+
+        this.aconfirm = $(modalDialog).appendTo(thisTable.parent);
+        $('button', this.aconfirm).click(function( ) {
+            thisTable.aform.submit();
+        });
+
+
 	
 	// Hide all UI elements
 	this.amenu.menu().hide();
@@ -302,3 +324,4 @@ PlayerTable2.prototype.translateToString = function( data, type ) {
 	}
 	else { return data; }
 }
+

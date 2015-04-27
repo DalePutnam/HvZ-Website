@@ -16,7 +16,16 @@ else
 echo "<div class='navbar-header col-md-2'><h4 style='margin-top: 15px; height: 25px; padding: 0; color: white'>Humans vs Zombies</h4></div>";
 echo "<div class='navbar-collapse collapse'>";
 echo "<ul class='nav navbar-nav navbar-right'>";
-echo "<li style='margin-top: 15px; height: 25px; padding: 0; padding-right: 10px; color: white'>$first $last</li>";
+
+$imp = GetImpersonate();
+if( $imp != NULL )
+{
+    echo "<li style='margin-top: 15px; height: 25px; padding: 0; padding-right: 10px; color: red'>IMPERSONATING $first $last</li>";
+}
+else
+{
+    echo "<li style='margin-top: 15px; height: 25px; padding: 0; padding-right: 10px; color: white'>$first $last</li>";
+}
 echo "</ul>";
 
 echo "<ul class='nav navbar-nav'>";
@@ -30,11 +39,12 @@ if( is_maintenance() )
 {
 	echo "<li style='margin-top: 15px; height: 25px; padding: 0; color: red'>MAINTENANCE MODE ENABLED. SEE <a style='padding: 0; display: inline' href='game.php'>GAME SETTINGS</a> PAGE FOR MORE INFO</li>";
 }
-echo "</ul></div>";
 
-$imp = GetImpersonate();
+/*$imp = GetImpersonate();
 if( $imp != NULL )
 {
-	echo "<p><strong style='color:red'>YOU ARE CURRENTLY IMPERSONATING A USER. TO RETURN TO BEING AN ADMIN, CLICK <a href='panel.php?imp_end='>HERE</a></strong></p>";
-}
+	//echo "<p><strong style='color:red'>YOU ARE CURRENTLY IMPERSONATING A USER. TO RETURN TO BEING AN ADMIN, CLICK <a href='panel.php?imp_end='>HERE</a></strong></p>";
+    echo "<li style='margin-top: 15px; height: 25px; padding: 0; color: red'><a style='padding: 0; display: inline' href='panel.php?imp_end='>END IMPERSONATION</li>";
+}*/
+echo "</ul></div>";
 ?>
