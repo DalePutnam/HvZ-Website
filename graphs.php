@@ -48,7 +48,7 @@ while( $row = $result->fetch_assoc() )
 	array_push( $registrations, strtotime( $row["reg_date"] )*1000 );
 	
 	$datenum = ((int)date( "w", strtotime($row["reg_date"]) )) - 1;
-	$reg_days[$datenum]++;
+	//$reg_days[$datenum]++;
 }
 $result->free();
 
@@ -58,7 +58,7 @@ while( $row = $result->fetch_assoc() )
 	array_push( $stuns, strtotime( $row["time"] )*1000 );
 	
 	$datenum = ((int)date( "w", strtotime($row["time"]) )) - 1;
-	$stun_days[$datenum]++;
+	//$stun_days[$datenum]++;
 }
 $result->free();
 
@@ -68,7 +68,7 @@ while( $row = $result->fetch_assoc() )
 	array_push( $tags, strtotime( $row["time"] )*1000 );
 	
 	$datenum = ((int)date( "w", strtotime($row["time"]) )) - 1;
-	$tag_days[$datenum]++;
+	//$tag_days[$datenum]++;
 }
 $result->free();
 
@@ -103,10 +103,31 @@ for( $i = 0; $i < 200; $i++ )
 		createDateGraph( $("#graph"), [r_start, g_start, g_start], [r_end, g_end, g_end], width, height, [registrations, tags, stuns], ["black", "red", "blue"], max, now );
 	});
 </script>
-<strong>Registration Start:</strong> <?php echo fdate( $r_start/1000 ); ?><br/>
-<strong>Registration End:</strong> <?php echo fdate( $r_end/1000 ); ?><br/>
-<strong>Game Start:</strong> <?php echo fdate( $g_start/1000 ); ?><br/>
-<strong>Game End:</strong> <?php echo fdate( $g_end/1000 ); ?><br/>
+<div class="row">
+    <div class="col-md-12">
+        <h2>Graphs</h2>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <div class="row">
+            <div class="col-md-5"><label>Registration Start:</label></div>
+            <div class="col-md-7"><?php echo fdate( $r_start/1000 ); ?></div>
+        </div>
+        <div class="row">
+            <div class="col-md-5"><label>Registration End:</label></div>
+            <div class="col-md-7"><?php echo fdate( $r_end/1000 ); ?></div>
+        </div>
+        <div class="row">
+            <div class="col-md-5"><label>Game Start:</label></div>
+            <div class="col-md-7"><?php echo fdate( $g_start/1000 ); ?></div>
+        </div>
+        <div class="row">
+            <div class="col-md-5"><label>Game End:</label></div>
+            <div class="col-md-7"><?php echo fdate( $g_end/1000 ); ?></div>
+        </div>
+    </div>
+</div>
 <p><i>Graph only shows ratified stuns, meaning stun data won't appear until ~1AM the following morning</i></p>
 <!-- <p><i>Current tag data is for testing purposes. It will change to the real data when the game starts</i></p> -->
 <table style="text-align: center; vertical-align: center;">

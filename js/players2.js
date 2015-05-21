@@ -157,34 +157,17 @@ PlayerTable2.prototype.buildMenuSystem = function() {
 					}
 					thisTable.getPlayerObj( thisTable.selectedId )
 					$("p", thisTable.aconfirm).text("Are you sure you'd like to perform a '" + name + "' on " + pl + "?");
-					//thisTable.aconfirm.dialog( "open" );
                     thisTable.aconfirm.modal("show");
 				}
 				return false;
 			});
 		}
 	});
-	
-	/*this.aconfirm = $("<div title='Confirm Action'>")
-		.appendTo( thisTable.parent )
-		.append( $("<p>") )
-		.dialog( {
-			autoOpen: false,
-			modal: true,
-			position: {my:"top", at:"top", of:window},
-			buttons: {
-				Confirm: ,
-				Cancel : function( ) {
-					$(this).dialog("close");
-				}
-			}
-		});*/
 
-        this.aconfirm = $(modalDialog).appendTo(thisTable.parent);
-        $('button', this.aconfirm).click(function( ) {
-            thisTable.aform.submit();
-        });
-
+    this.aconfirm = $(modalDialog).appendTo(thisTable.parent);
+    $('button', this.aconfirm)[0].click(function( ) {
+        thisTable.aform.submit();
+    });
 
 	
 	// Hide all UI elements

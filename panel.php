@@ -45,7 +45,12 @@ if( isset($_REQUEST["action"]) )
 }
 page_head();?>
 <div class="row">
-<div class='col-md-3'><h3>Welcome, <?php echo First(); ?> <?php echo Last(); ?></h3>
+    <div class='col-md-12'>
+        <h2>Welcome, <?php echo First(); ?> <?php echo Last(); ?></h2>
+    </div>
+</div>
+<div class="row">
+<div class='col-md-3'>
 <?php
 if( IsAdmin() ) {
 	?>

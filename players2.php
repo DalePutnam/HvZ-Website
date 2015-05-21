@@ -96,7 +96,12 @@ page_head(); ?>
 <?php
 if ( IsAdmin() ) {
 ?>
-    <div class="row" style="padding-top: 15px">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Players</h2>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-md-8">
             <form class="form-inline" method="get" action="">
                 <div class="form-group">
@@ -212,8 +217,8 @@ elseif( !IsAdmin() )
     ?>
     <?php
     if( IsAdmin() ) {
-        echo "<h2>Players</h2>";
-        echo "<h3>Stats</h3>";
+        //echo "<h2>Players</h2>";
+        echo "<h2>Stats</h2>";
         echo "<strong>All Players Score:</strong> " . get_team_score() . "<br/>";
         echo "<strong>Average Players Score:</strong> " . get_team_score(NULL, true) . "<br/><br/>";
 

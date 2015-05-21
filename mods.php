@@ -18,8 +18,18 @@ else
 }
 $admin_email = get_mail_email();
 ?>
-<div class="row"><div class="col-md-12"><h4>The main moderator e-mail address is <?php echo "<a href='$admin_email'>$admin_email</a>"; ?>.</h4></div></div>
-<div class="row"><div class="col-md-6">
+<div class="row">
+    <div class="col-md-12">
+        <h2>Contact Moderators</h2>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <p>The main moderator e-mail address is <?php echo "<a href='$admin_email'>$admin_email</a>"; ?>.</p>
+    </div>
+</div>
+<div class="row">
+<div class="col-md-6">
 <table class='table table-striped table-bordered table-condensed'>
 <tr><th>Name</th><th>Email</th><th>Score</th></tr>
 <?php

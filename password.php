@@ -29,7 +29,7 @@ page_head();
 ?>
 <div class="row">
     <div class="col-md-4">
-        <h1>Reset Your Password</h1>
+        <h2>Reset Your Password</h2>
         <p>Warning: This process will log you out</p>
     </div>
 </div>
