@@ -165,7 +165,7 @@ PlayerTable2.prototype.buildMenuSystem = function() {
 	});
 
     this.aconfirm = $(modalDialog).appendTo(thisTable.parent);
-    $('button', this.aconfirm)[0].click(function( ) {
+    $('button', this.aconfirm).first().click(function( ) {
         thisTable.aform.submit();
     });
 

@@ -93,6 +93,7 @@ function page_head()
 	<script src="js/players.js"></script>
 	<script src="js/players2.js"></script>
 	<script src="js/graph.js"></script>
+    <script src="js/table.js"></script>
     <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">-->
     <link rel="stylesheet" href="bootstrap-3.3.4-dist/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">

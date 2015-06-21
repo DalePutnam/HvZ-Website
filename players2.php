@@ -239,7 +239,14 @@ elseif( !IsAdmin() )
         document.location.href = "breakdown.php?id=" + id;
     }
 
-	var actions = { "Edit" : { "type" : "post" }, "Delete" : { "type" : "post", "confirm":true }, "Ban" : { "type" : "post", "confirm":true }, "Reset Password" : { "type" : "post", "confirm":true }, "Impersonate" : { "type" : "post" }, "Add To OZ Pool" : {"type":"post"}, "View Score Breakdown" : {"type":"js", "func":ViewScore} };
+	var actions = { "Edit" : { "type" : "post" },
+                    "Delete" : { "type" : "post", "confirm":true },
+                    "Ban" : { "type" : "post", "confirm":true },
+                    "Reset Password" : { "type" : "post", "confirm":true },
+                    "Impersonate" : { "type" : "post" },
+                    "Add To OZ Pool" : {"type":"post"},
+                    "View Score Breakdown" : {"type":"js", "func":ViewScore} };
+
 	var playerTable = new PlayerTable2(  <?php echo json_encode($fullPlayerProperties); ?>, { }, actions );
 	playerTable.take( $("#table"), false );
 <?php } else if( IsZombie() || IsSpectator() ) { ?>
