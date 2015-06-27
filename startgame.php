@@ -37,13 +37,13 @@ if( isset( $_REQUEST["action"] ) )
 			hvzmailf("hvz-humans@csclub.uwaterloo.ca", "welcome_human", array());
 			hvzmailf("hvz-zombies@csclub.uwaterloo.ca", "welcome_zombie", array());
 		}
-		
-		reload_self("Game started.");
+
+        set_alert("SUCCESS", "Game started.");
 	}
 	elseif( $action == "Stop Game" )
 	{
 		set_game_start(false);
-		reload_self("Game stopped.");
+        set_alert("SUCCESS", "Game stopped.");
 	}
 }
 
@@ -53,7 +53,7 @@ if( !is_game_started() )
 {
 ?>
 
-<h1>Starting the Game</h2>
+<h2>Starting the Game</h2>
 <h2>Checklist</h2>
 <ol>
 <li>Have you submitted a FEDS event form?</li>
@@ -81,7 +81,7 @@ else echo "<strong>Warning:&nbsp;</strong>No OZs have been selected";
 <li>Emails both teams' mailing lists with an introduction email following the <a href="edit_template.php?edit=welcome_human">welcome_human</a> and <a href="edit_template.php?edit=welcome_zombie">welcome_zombie</a> templates respectively. (NOTE: This step will be skipped if the website is in <a href="game.php">maintenance</a> mode</li>
 </ol>
 <form method="post" action="">
-<input type="submit" value="Start Game" name="action" />
+<input class="btn btn-success" type="submit" value="Start Game" name="action" />
 </form>
 
 <?php
@@ -89,10 +89,10 @@ else echo "<strong>Warning:&nbsp;</strong>No OZs have been selected";
 else
 {
 ?>
-<h1>Starting the Game</h2>
+<h2>Starting the Game</h2>
 <p>The game has already been started. If you would like to stop the game (disables tagging and other in-game systems) use the button below. You will be able to start the game later.</p>
 <form method="post" action="">
-<input type="submit" value="Stop Game" name="action" />
+    <input class="btn btn-danger" type="submit" value="Stop Game" name="action" />
 </form>
 <?php
 }

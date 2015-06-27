@@ -2,8 +2,14 @@
 require_once("require/rgame.php");
 require_once("require/secure.php");
 
-$first = First();
-$last = Last();
+$first = "";
+$last = "";
+
+if ( !Unsecure() )
+{
+    $first = First();
+    $last = Last();
+}
 /*if ( Type() != "NONE" )
 {
     $team = Team();
@@ -13,7 +19,7 @@ else
 {
     echo "<div class='navbar-header'><a class='navbar-brand' href='#'>$first $last</a></div>";
 }*/
-echo "<div class='navbar-header col-md-2'><h4 style='margin-top: 15px; height: 25px; padding: 0; color: white'>Humans vs Zombies</h4></div>";
+echo "<div class='navbar-header col-xs-2 col-sm-2 col-md-2'><h4 style='margin-top: 15px; height: 25px; padding: 0; color: white'>Humans vs Zombies</h4></div>";
 echo "<div class='navbar-collapse collapse'>";
 echo "<ul class='nav navbar-nav navbar-right'>";
 
@@ -35,7 +41,7 @@ if( !is_game_started() )
     echo "<li style='margin-top: 15px; height: 25px; padding: 0; padding-right: 10px; color: white'>Game will start on " . date('l F jS \a\t g:iA', strtotime(get_game_start())) . "</li>";
     //echo "<p>Game will start on " . date('l F jS \a\t g:iA', strtotime(get_game_start())) . "</p>";
 }
-if( is_maintenance() )
+if( is_maintenance() && !Unsecure() )
 {
 	echo "<li style='margin-top: 15px; height: 25px; padding: 0; color: red'>MAINTENANCE MODE ENABLED. SEE <a style='padding: 0; display: inline' href='game.php'>GAME SETTINGS</a> PAGE FOR MORE INFO</li>";
 }

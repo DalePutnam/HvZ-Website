@@ -22,31 +22,37 @@ if( isset($_REQUEST["action"]) )
 		$filename = $name . ".txt";
 		
 		$result = file_put_contents($templates_dir . $filename, $content);
-		if( $result === FALSE ) reload_self("&Failed to write to file $templates_dir$filename.");
-		reload_self("File saved.");
+		if( $result === FALSE ) set_alert("ERROR", "Failed to write to file $templates_dir$filename.");
+		set_alert("SUCCESS", "File saved.");
 	}
 }
 page_head();
 ?>
-<h1>E-Mail Templates</h1>
+<h2>E-Mail Templates</h2>
 <?php
 if( isset($_GET["edit"]) )
 {
 	$name = $_GET["edit"];
-	echo "<h2>Editing $name</h2>";
+	echo "<h3>Editing $name</h3>";
 	echo "<p>The first line will be the subject, the rest is the body.</p>";
 	$filename = $name . ".txt";
 	$contents = file_get_contents( $templates_dir . $filename );
 	?>
-	<form method="post" action="">
-	<input type="hidden" name="file" value="<?php echo $name; ?>" />
-	<textarea name="content" rows="10" cols="30"><?php echo $contents;?></textarea><br/>
-	<input type="submit" name="action" value="Save" />
-	</form>
+    <div class="row">
+        <div class="col-md-6">
+            <form method="post" action="">
+                <input type="hidden" name="file" value="<?php echo $name; ?>" />
+                <div class="form-group">
+                    <textarea class="form-control" name="content" rows="10" cols="30"><?php echo $contents;?></textarea>
+                </div>
+                <input class="btn btn-default" type="submit" name="action" value="Save" />
+            </form>
+        </div>
+    </div>
 	<?php
 }
 ?>
-<h2>Template List</h2>
+<h3>Template List</h3>
 <p>Click on the template you wish to edit</p>
 <?php
 

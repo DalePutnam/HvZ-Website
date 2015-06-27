@@ -14,17 +14,24 @@ if( isset( $_REQUEST["action"] ) )
     {
         $text = $_REQUEST["inventory"];
         set_inventory($text);
-        reload_self("Inventory updated.");
+        set_alert("SUCCESS", "Inventory updated.");
     }
 }
 
 page_head();
 ?>
-    <h1>Inventory Management</h1>
-    <form method="post" action="">
-        <label for="inventory">Inventory</label><textarea name="inventory" cols="30" rows="20"><?php echo get_inventory(); ?></textarea>
-        <input type="submit" name="action" value="Save" />
-    </form>
+<h2>Inventory Management</h2>
+<div class="row">
+    <div class="col-md-6">
+        <form method="post" action="">
+            <div class="form-group">
+                <label for="inventory">Inventory</label>
+                <textarea class="form-control" name="inventory" cols="30" rows="20"><?php echo get_inventory(); ?></textarea>
+            </div>
+            <input class="btn btn-default" type="submit" name="action" value="Save" />
+        </form>
+    </div>
+</div>
 <?php
 page_foot();
 ?>

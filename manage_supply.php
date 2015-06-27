@@ -15,8 +15,8 @@ if( isset( $_REQUEST["action"] ) )
 	{
 		$num = trim($_REQUEST["num"]);
 		$codes = generate_supply( $num );
-		if( count($codes) == 0 ) reload_self("&You must enter a valid number greater than zero");
-		reload_self( array( "codes" => implode(",", $codes) ) );
+		if( count($codes) == 0 ) set_alert("ERROR", "You must enter a valid number greater than zero");
+        set_alert("SUCCESS", array( "codes" => implode(",", $codes) ) );
 	}
     elseif($action == "Give Points")
     {
@@ -26,28 +26,49 @@ if( isset( $_REQUEST["action"] ) )
 
         if($result !== TRUE)
         {
-            reload_self("&" . $result);
+            set_alert("ERROR", $result);
         }
-        else reload_self("Gave $points points to team $team");
+        else set_alert("SUCCESS", "Gave $points points to team $team");
     }
 }
 
 page_head();
 ?>
-<h1>Manage Supply Codes</h1>
-<h2>Give Team Score</h2>
-Want to give a team some cool scores? Just click here!
-<form method="post" action="">
-    Points To Give:&nbsp;<input name="points" /><br/>
-    Team:&nbsp;<?php team_select("team", "NONE");?><br/>
-    <input type="submit" name="action" value="Give Points" />
-</form>
-<h2>Generate</h2>
-<p>Use this form to generate batches of new supply codes. New codes will be shown here in a separate list, but be warned: Once you leave the page the new codes will be interspersed with the existing ones in the list below. Be sure to write them down right after generating them.</p>
-<form method="post" action="">
-Number of Codes:&nbsp;<input name="num" value="0"/><br/>
-<input type="submit" name="action" value="Generate"/>
-</form>
+<h2>Manage Supply Codes</h2>
+<h3>Give Team Score</h3>
+<p>Want to give a team some cool scores? Just click here!</p>
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" action="">
+            <div class="form-group">
+                <label>Points To Give</label>
+                <input class="form-control" name="points" />
+            </div>
+            <div class="form-group">
+                <label>Team</label>
+                <?php team_select("team", "NONE");?>
+            </div>
+            <input class="btn btn-default" type="submit" name="action" value="Give Points" />
+        </form>
+    </div>
+</div>
+<h3>Generate</h3>
+<p>
+    Use this form to generate batches of new supply codes.
+    New codes will be shown here in a separate list, but be warned: Once you leave the page the new codes will be interspersed with the existing ones in the list below.
+    Be sure to write them down right after generating them.
+</p>
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" action="">
+            <div class="form-group">
+                <label>Number of Codes</label>
+                <input class="form-control" name="num" value="0"/>
+            </div>
+            <input class="btn btn-default" type="submit" name="action" value="Generate"/>
+        </form>
+    </div>
+</div>
 <?php
 if( isset( $_REQUEST["codes"] ) )
 {
@@ -59,8 +80,10 @@ if( isset( $_REQUEST["codes"] ) )
 	}
 }
 ?>
-<h2>List</h2>
-<table class="supply"><tr><th>Supply Code</th><th>Captured By</th></tr>
+<h3>List</h3>
+<div class="row">
+<div class="col-md-4">
+<table class="supply table table-striped table-bordered table-condensed"><tr><th>Supply Code</th><th>Captured By</th></tr>
 <?php
 $codes = get_supply();
 foreach( $codes as $code )
@@ -74,6 +97,8 @@ foreach( $codes as $code )
 }
 ?>
 </table>
+</div>
+</div>
 <?php
 page_foot();
 ?>

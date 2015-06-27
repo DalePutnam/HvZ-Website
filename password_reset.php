@@ -12,12 +12,12 @@ if( isset($_REQUEST["action"]) )
 		$result = reset_password( $email );
 		if( $result === FALSE ) 
 		{
-			reload_self("&E-mail address not found in database");
+            set_alert("ERROR", "E-mail address not found in database");
 		}
 		else 
 		{
 			hvzmailf($email, "reset", array("password" => $result));
-			reload_self("Password reset, please check your inbox.");
+            set_alert("SUCCESS", "Password reset, please check your inbox.");
 		}
 	}
 }
@@ -25,10 +25,17 @@ page_unsecure_head();
 write_response();
 ?>
 <p>If you've forgotten or lost your password, please enter your e-mail address below. This will cause a new password to be emailed to you.</p>
-<form method="post" action="">
-E-Mail Address&nbsp;<input name="email"/><br/>
-<input type="submit" name="action" value="Reset Password" />
-</form>
+<div class="row">
+    <div class="col-md-3">
+        <form method="post" action="">
+            <div class="form-group">
+                <label>E-Mail Address</label>
+                <input class="form-control" name="email"/>
+            </div>
+            <input class="btn btn-default" type="submit" name="action" value="Reset Password" />
+        </form>
+    </div>
+</div>
 <a href="login.php">Back to Login Screen</a>
 <?php
 page_unsecure_foot();

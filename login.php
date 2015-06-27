@@ -20,15 +20,26 @@ page_unsecure_head();
  
 if( is_maintenance( ) ) { echo "<strong style='color:red;'>Website is in maintenance mode, please come back later</strong>"; }
 ?>
-<form action="panel.php?reload=1" method="post">
-	E-Mail:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="user" /><br/>
-	Password:&nbsp;<input name="pass" type="password" /><br/>
-	<input type="submit" value="Login" />
-</form>
-<a href="mods.php">Contact Moderators</a><br/>
+<div class="row">
+    <div class="col-md-3">
+        <form action="panel.php?reload=1" method="post">
+            <div class="form-group">
+                <label>E-Mail</label>
+                <input class="form-control" name="user" />
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input class="form-control" name="pass" type="password" />
+            </div>
+            <input class="btn btn-default" type="submit" value="Login" />
+        </form>
+    </div>
+</div>
+
+<!--<a href="mods.php">Contact Moderators</a><br/>
 <a href="documents/rules.pdf">Game Rules</a><br/>
 <a href="graphs.php">Game Graphs</a><br/>
-<a href="password_reset.php">Forgot/Reset Password</a><br/>
+<a href="password_reset.php">Forgot/Reset Password</a><br/>-->
 
 <?php
 page_unsecure_foot();

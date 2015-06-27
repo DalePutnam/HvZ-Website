@@ -14,8 +14,8 @@ if( isset( $_REQUEST["action"] ) )
 		$new = md5(trim($_REQUEST["new"]));
 		$confirm = md5(trim($_REQUEST["confirm"]));
 		
-		if( $new != $confirm ) reload_self("&Entered passwords don't match");
-		if( PasswordCrypt() != $old ) reload_self("&Old password does not match current");
+		if( $new != $confirm ) set_alert("ERROR", "Entered passwords don't match");
+		if( PasswordCrypt() != $old ) set_alert("ERROR", "Old password does not match current");
 		else
 		{
 			change_password(ID(), trim($_REQUEST["new"]));

@@ -58,7 +58,7 @@ function count_humans_below_score($score)
 	return intval($row[0]);
 }
 
-function register_player($first, $last, $email, $type)
+function register_player($first, $last, $email, $type, $location = "NULL")
 {
 	global $sql;
 	
@@ -70,7 +70,7 @@ function register_player($first, $last, $email, $type)
 	$password = generateRandomString(8);
 	$code = generateRandomString(6);
 	
-	if(!$sql->query("INSERT INTO `hvz_players` (`first_name`, `last_name`, `email`, `password_crypt`, `reg_date`, `code`, `type`) VALUES ('$first', '$last', '$email', MD5('$password'), NOW(), '$code', '$type');")) return FALSE;
+	if(!$sql->query("INSERT INTO `hvz_players` (`first_name`, `last_name`, `email`, `password_crypt`, `reg_date`, `code`, `type`, `location_id`) VALUES ('$first', '$last', '$email', MD5('$password'), NOW(), '$code', '$type', '$location');")) return FALSE;
 	
 	setup_subscription_by_type($email, $type);
 	
@@ -644,8 +644,13 @@ function get_team_score( $type = NULL, $avg = false )
 
 // table configurations
 $namePlayerProperties = json_decode( "{
-						\"first_name\": 		{ \"display\":\"First Name\", \"type\":\"text\"}, 
+						\"first_name\": 		{ \"display\":\"First Name\", \"type\":\"text\"},
 						\"last_name\": 		{ \"display\":\"Last Name\", \"type\":\"text\"}
+					}", true);
+$ozPlayerProperties = json_decode( "{
+						\"first_name\": 		{ \"display\":\"First Name\", \"type\":\"text\"},
+						\"last_name\": 		{ \"display\":\"Last Name\", \"type\":\"text\"},
+						\"waiver\":         { \"display\":\"Waiver\", \"type\":\"text\"}
 					}", true);
 $basicPlayerProperties = json_decode( "{ 
 						\"first_name\": 		{ \"display\":\"First Name\", \"type\":\"text\"}, 
@@ -698,7 +703,21 @@ function gen_player_table( $players, $properties, $order=NULL, $boxes=false )
 			echo "</td>";
 			foreach( $properties as $key2=>$prop )
 			{
-				echo "<td class='$key2'>{$player[$key2]}</td>";
+                if ($key2 === "waiver")
+                {
+                    if ($player[$key2] == 0)
+                    {
+                        echo "<td class='$key2'>No</td>";
+                    }
+                    else
+                    {
+                        echo "<td class='$key2'>Yes</td>";
+                    }
+                }
+                else
+                {
+                    echo "<td class='$key2'>{$player[$key2]}</td>";
+                }
 			}
 			echo "</tr>";
 		}
@@ -721,7 +740,21 @@ function gen_player_table( $players, $properties, $order=NULL, $boxes=false )
 			echo "</td>";
 			foreach( $properties as $key2=>$prop )
 			{
-				echo "<td class='$key2'>{$player[$key2]}</td>";
+                if ($key2 === "waiver")
+                {
+                    if ($player[$key2] == 0)
+                    {
+                        echo "<td class='$key2'>No</td>";
+                    }
+                    else
+                    {
+                        echo "<td class='$key2'>Yes</td>";
+                    }
+                }
+                else
+                {
+                    echo "<td class='$key2'>{$player[$key2]}</td>";
+                }
 			}
 			echo "</tr>";
 		}

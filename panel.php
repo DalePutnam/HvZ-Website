@@ -15,32 +15,32 @@ if( isset($_REQUEST["action"]) )
 	if( $action == "Show Score" )
 	{
 		$sql->query("UPDATE `hvz_players` SET `show_score`=1 WHERE `id`='" . ID() . "'");
-		reload_self("Your score is now visible to other players.");
+        set_alert("SUCCESS", "Your score is now visible to other players.");
 	}
 	elseif($action == "Hide Score")
 	{
 		$sql->query("UPDATE `hvz_players` SET `show_score`=0 WHERE `id`='" . ID() . "'");
-		reload_self("Score hidden.");
+        set_alert("SUCCESS", "Score hidden.");
 	}
 	elseif($action == "Set My Score" && IsAdmin())
 	{
 		$score = $_REQUEST["score"];
 		$score = intval($sql->real_escape_string($score));
 		$sql->query("UPDATE `hvz_players` SET `score`='$score', `bonus_score`='$score' WHERE `id`='" . ID() . "'");
-		reload_self("Score updated.");
+        set_alert("SUCCESS", "Score updated.");
 	}
 	elseif($action == "Unsubscribe")
 	{
 		update_player_sub(ID(), false);
 		setup_subscription_by_type(Email(), Type(), false);
-		reload_self("Unsubscribed.");
+        set_alert("SUCCESS", "Unsubscribed.");
 
 	}
 	elseif($action == "Subscribe")
 	{
 		update_player_sub(ID(), true);
 		setup_subscription_by_type(Email(), Type(), true);
-		reload_self("Subscribed.");
+        set_alert("SUCCESS", "Subscribed.");
 	}
 }
 page_head();?>

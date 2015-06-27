@@ -108,12 +108,12 @@ if($self) {$score = Score();}
 else $score = $players[$myID]["score"];
 
 ?>
-<h1>Score Breakdown<?php if(!$self) echo " for <span style='color: red'>" . player_name($myID) . "</span>"; ?> : <?php echo $score ?> point(s)</h1>
-<h2>Supply Codes: <?php echo $num_supply * $score_per_supply; ?> point(s)</h2>
+<h2>Score Breakdown<?php if(!$self) echo " for <span style='color: red'>" . player_name($myID) . "</span>"; ?> : <?php echo $score ?> point(s)</h2>
+<h3>Supply Codes: <?php echo $num_supply * $score_per_supply; ?> point(s)</h3>
 <p><?php echo $score_per_supply; ?> point(s) per supply code multiplied by <?php echo $num_supply; ?> supply codes.</p>
-<h2>Stuns: <?php echo $stun_total; ?> point(s)</h2>
+<h3>Stuns: <?php echo $stun_total; ?> point(s)</h3>
 <p><?php echo $stun_stats; ?></p>
-<h2>Tags: <?php echo count($tags) * $score_per_tag; ?> point(s)</h2>
+<h3>Tags: <?php echo count($tags) * $score_per_tag; ?> point(s)</h3>
 <p>
     <?php
     foreach($tags as $tag)
@@ -122,7 +122,7 @@ else $score = $players[$myID]["score"];
     }
     ?>
 </p>
-<h2>Bonus: <?php echo $bonus ?> point(s)</h2>
+<h3>Bonus: <?php echo $bonus ?> point(s)</h3>
 Bonus points are awarded to teams based on mission success/failure.
 <?php
 

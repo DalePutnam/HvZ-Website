@@ -15,7 +15,7 @@ if( IsAdmin() ) {
 		{
 			$id = $_REQUEST["id"];
 			remove_player($id);
-			reload_self("Player id $id deleted.");
+            set_alert("SUCCESS", "Player id $id deleted.");
 		}
 		elseif($_REQUEST["action"] == "Edit")
 		{
@@ -30,7 +30,7 @@ if( IsAdmin() ) {
 			$type = trim($_REQUEST["type"]);
 			
 			$addresult = register_player($first, $last, $email, $type);
-			if( !is_array($addresult) ) reload_self("&E-mail already exists.");
+			if( !is_array($addresult) ) set_alert("ERROR", "E-mail already exists.");
 			$id = $addresult["id"];
 			$password = $addresult["password"];
 			if( isset( $_REQUEST["oz"] ) )
@@ -41,7 +41,7 @@ if( IsAdmin() ) {
 			{
 				hvzmailf($email, "register", array("password" => $password, "first_name" => $first, "last_name" => $last));
 			}
-			reload_self("Player $first $last has been added.");
+            set_alert("SUCCESS", "Player $first $last has been added.");
 		}
 		elseif($_REQUEST["action"] == "Commit")
 		{
@@ -53,16 +53,16 @@ if( IsAdmin() ) {
 			$code = trim($_REQUEST["code"]);
 			
 			update_player($id, $first, $last, $email, $type, $code);
-			reload_self("Player $first $last has been modified.");
+            set_alert("SUCCESS", "Player $first $last has been modified.");
 		}
 		elseif($_REQUEST["action"] == "Reset Password")
 		{
 			$id = $_REQUEST["id"];
 			$result = reset_password_by_id( $id );
-			if( $result === FALSE ) reload_self("&Failed to reset password.");
+			if( $result === FALSE ) set_alert("ERROR", "Failed to reset password.");
 			$player_reset = $players[$id];
 			hvzmailf($player_reset["email"], "reset", array("password" => $result));
-			reload_self("Password for {$player_reset['first_name']} {$player_reset['last_name']} has been reset.");
+            set_alert("SUCCESS", "Password for {$player_reset['first_name']} {$player_reset['last_name']} has been reset.");
 		}
 		elseif($_REQUEST["action"] == "Impersonate")
 		{
@@ -74,14 +74,14 @@ if( IsAdmin() ) {
 			update_type($id, "BANNED");
 			$player_ban = $players[$id];
 			hvzmailf($player_ban["email"], "ban", array());
-			reload_self("{$player_ban['first_name']} {$player_ban['last_name']} has been banned.");
+            set_alert("SUCCESS", "{$player_ban['first_name']} {$player_ban['last_name']} has been banned.");
 		}
 		elseif($_REQUEST["action"] == "Add To OZ Pool")
 		{
 			$id = $_REQUEST["id"];
 			$pool_player = $players[$id];
-			if(add_to_pool($id)) reload_self("{$pool_player['first_name']} {$pool_player['last_name']} added to OZ Pool.");
-			else reload_self("&{$pool_player['first_name']} {$pool_player['last_name']} is already in OZ Pool!");
+			if(add_to_pool($id)) set_alert("SUCCESS", "{$pool_player['first_name']} {$pool_player['last_name']} added to OZ Pool.");
+			else set_alert("ERROR", "{$pool_player['first_name']} {$pool_player['last_name']} is already in OZ Pool!");
 		}
 		elseif($_REQUEST["action"] == "Cancel")
 		{

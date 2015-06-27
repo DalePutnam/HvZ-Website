@@ -16,13 +16,13 @@ if( isset($_REQUEST["action"]) && !is_game_started())
 		$ids = array();
 		if( isset($_REQUEST["ids"] ) ) { $ids = $_REQUEST["ids"]; }
 		set_oz_list( $ids );
-		reload_self("OZ list saved.");
+        set_alert("SUCCESS", "OZ list saved.");
 	}
 	if( $_REQUEST["action"] == "Remove from Pool" )
 	{
 		$id = $_REQUEST["id"];
 		remove_from_pool($id);
-		reload_self("Player removed from OZ Pool.");
+        set_alert("SUCCESS", "Player removed from OZ Pool.");
 	}
 }
 
@@ -86,7 +86,7 @@ page_head();?>
 
 <div class="row">
     <div id="pool" class="col-md-4">
-        <?php gen_player_table( $players, $namePlayerProperties, $pool_initial, false ); ?>
+        <?php gen_player_table( $players, $ozPlayerProperties, $pool_initial, false ); ?>
     </div>
 <?php if( !is_game_started() ) { ?>
     <div id="all" class="col-md-4">
@@ -161,6 +161,7 @@ page_head();?>
 		if( x.length == 0 ) return;
 		for( var i = 0; i < x.length; i++ )
 		{
+            $("input[name='ids[]'][value=" + x[i] + "]").remove();
 			if( $.inArray( x[i], ozpool ) > -1 )
 			{
 				poolTable.addPlayer( x[i] );
@@ -204,7 +205,17 @@ page_head();?>
 	
 	// random OZ adding
     $("input#go").click( function() {
-		var p = poolTable.getPlayerIDs();
+		var initial = poolTable.getPlayerIDs();
+        var p = [];
+
+        for ( var i = 0; i < initial.length; i++ )
+        {
+            if (poolTable.getPlayerObj(initial[i]).waiver === "1")
+            {
+                p.push(initial[i]);
+            }
+        }
+
 		var r = [];
 		var num = parseInt($("input#rand").val());
 		if( isNaN( num ) ) {

@@ -12,31 +12,31 @@ if( isset( $_REQUEST["action"] ) )
 	if( $action == "Ratify Stuns" )
 	{
 		ratify_stuns();
-		reload_self("Stuns have been ratified.");
+        set_alert("SUCCESS", "Stuns have been ratified.");
 	}
     if( $action == "Recalculate Stuns" )
     {
         $result = recalculate_stuns();
         if($result === TRUE)
         {
-            reload_self("Stuns have been recalculated");
+            set_alert("SUCCESS", "Stuns have been recalculated");
         }
         else
         {
-            reload_self("&" . $result);
+            set_alert("ERROR", $result);
         }
     }
 	if( $action == "Delete" )
 	{
 		$id = $_REQUEST["id"];
 		delete_stun($id);
-		reload_self("Stun deleted.");
+        set_alert("SUCCESS", "Stun deleted.");
 	}
 	if( $action == "Add 12 Hours" )
 	{
 		$id = $_REQUEST["id"];
 		add_half_day($id);
-		reload_self("Time updated.");
+        set_alert("SUCCESS", "Time updated.");
 	}
 }
 

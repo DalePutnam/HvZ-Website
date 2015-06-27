@@ -87,3 +87,12 @@ body {
     padding-top: 1px; !important;
     padding-bottom: 1px; !important;
 }
+
+table.mail>tbody>tr>th {
+    background: #f9f9f9;
+}
+
+table.mail>tbody>tr:nth-child(4n) {
+    background: #f9f9f9;
+}
+

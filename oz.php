@@ -16,13 +16,13 @@ if( isset($_REQUEST["action"]) && !is_game_started())
 		$ids = array();
 		if( isset($_REQUEST["ids"] ) ) { $ids = $_REQUEST["ids"]; }
 		set_oz_list( $ids );
-		reload_self("OZ list saved.");
+        set_alert("SUCCESS", "OZ list saved.");
 	}
 	if( $_REQUEST["action"] == "Delete" )
 	{
 		$id = $_REQUEST["id"];
 		remove_from_pool($id);
-		reload_self("Player removed from OZ Pool.");
+        set_alert("SUCCESS", "Player removed from OZ Pool.");
 	}
 }
 

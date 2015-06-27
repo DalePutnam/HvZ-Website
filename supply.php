@@ -32,7 +32,7 @@ if( isset($_REQUEST["action"]) )
 		$query = array();
 		if( count($codesworked) > 0 ) $query["worked"] = implode(",", $codesworked);
 		if( count($codesfailed) > 0 ) $query["failed"] = implode(",", $codesfailed);
-		reload_self($query);
+        set_alert("SUCCESS", $query);
 	}
 }
 
@@ -51,12 +51,24 @@ if( isset($_REQUEST["failed"]) )
 	foreach($failed as $fail) { echo "$fail<br/>"; }
 }
 ?>
-<h1>Redeem Supply Codes</h1>
-<p>Use this form to redeem supply codes. If you'd like to redeem more than one at a time, simply separate them by commas. If there are any errors you'll be told which supply codes failed to redeem. Each code is currently worth <?php echo get_supply_score(); ?> points.</p>
-<form method="post" action="">
-Supply Code(s):&nbsp;<input name="codes" /><br/>
-<input type="submit" name="action" value="Redeem" />
-</form>
+<h2>Redeem Supply Codes</h2>
+<p>
+    Use this form to redeem supply codes. If you'd like to redeem more than one at a time, simply separate them by commas.
+    If there are any errors you'll be told which supply codes failed to redeem. Each code is currently worth <?php echo get_supply_score(); ?> points.
+</p>
+
+<div style="margin-top: 10px;" class="row">
+    <div class="col-md-4">
+        <form method="post" action="">
+            <div class="input-group">
+                <input class="form-control" name="codes" placeholder="Supply Code(s)" required/>
+                <span class="input-group-btn">
+                    <input class="btn btn-default" type="submit" name="action" value="Redeem" />
+                </span>
+            </div>
+        </form>
+    </div>
+</div>
 <?php
 page_foot();
 ?>

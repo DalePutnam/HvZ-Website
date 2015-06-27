@@ -1,4 +1,5 @@
 <ul class="nav nav-sidebar sidebar-spacing">
+<?php if( !Unsecure() ) { ?>
 <li><a href="panel.php">Home</a></li>
 <li><a href="players2.php">Player List</a></li>
 <li><a href="mission_briefing.php">Mission Briefing</a></li>
@@ -26,6 +27,7 @@
 <li><strong>Administration</strong></li>
 <li><a href="add_player.php">Add Player</a></li>
 <li><a href="schedule_briefing.php">Schedule Briefing</a></li>
+<li><a href="signup_locations.php">Sign Up Locations</a></li>
 <li><a href="oz2.php">Manage OZ List</a></li>
 <li><a href="startgame.php">Start Game Wizard</a></li>
 <li><a href="game.php">Game Settings</a></li>
@@ -44,5 +46,15 @@
 <li><a href='panel.php?imp_end='>End Impersonation</a></li>
 <?php } else { ?>
 <li><a href="login.php?logout=">Logout</a></li>
+<?php } ?>
+<?php } else { ?>
+<li><a href="mods.php">Contact Moderators</a></li>
+<li><a href="<?php global $rules_file; echo $rules_file; ?>"><strong>Game Rules</strong></a></li>
+<li><a href="graphs.php">Game Graphs</a></li>
+<li><a href="password_reset.php">Forgot/Reset Password</a></li>
+<br/>
+<ul class="nav nav-sidebar sidebar-spacing">
+<li><a href="login.php">Login</a></li>
+</ul>
 <?php } ?>
 </ul>

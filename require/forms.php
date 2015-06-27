@@ -1,10 +1,11 @@
 <?php
+require_once(dirname(__FILE__) . "/rlocations.php");
 require_once(dirname(__FILE__) . "/rgame.php");
 
 function stun_value_editor($stun_scores)
 {
-    echo "<table>";
-    echo "<tr><th>Scores</th><th>Date of Effect</th></tr>";
+    echo "<table class='table table-striped table-bordered table-condensed'>";
+    echo "<tr><th>Scores</th><th>Date of Effect</th><th></th></tr>";
     foreach($stun_scores as $entry)
     {
         $id = $entry["id"];
@@ -15,7 +16,7 @@ function stun_value_editor($stun_scores)
             <td>
                 <form method='post' action=''>
                     <input type="hidden" name="id" value="<?php echo $id; ?>" />
-                    <input type='submit' name="action" value="Delete Score Entry" />
+                    <input class="btn btn-danger" type='submit' name="action" value="Delete Score Entry" />
                 </form>
             </td>
         <?php
@@ -24,10 +25,10 @@ function stun_value_editor($stun_scores)
     echo "</table>";
 
     ?>
-    <form method="post" action="">
-        <input name="scores" value="5,4,3,2,1,0" />&nbsp;
-        <input name="date" class="dateme" />&nbsp;
-        <input type="submit" name="action" value="Add Points Per Stun Entry" />
+    <form class="form-inline" method="post" action="">
+        <input class="form-control" name="scores" value="5,4,3,2,1,0" />&nbsp;
+        <input class="form-control date dateme" name="date" />&nbsp;
+        <input class="btn btn-default" type="submit" name="action" value="Add Points Per Stun Entry" />
     </form>
     <script type="text/javascript">
         $(".dateme").datetimepicker();
@@ -50,7 +51,25 @@ function team_select($name, $def)
     <?php
 }
 
-function player_form($data = NULL, $showtype = TRUE)
+function location_select($name, $def)
+{
+    $selected = "selected='false'";
+    ?>
+    <select class="form-control" required="true" name="<?php echo $name; ?>">
+        <option value="NULL" <?php if($def == "NULL") echo $selected; ?>>None</option>
+    <?php
+    $locations = get_locations();
+    foreach ($locations as $key=>$location)
+    {
+    ?>
+        <option value="<?php echo $location["id"]; ?>" <?php if($def == $location["id"]) echo $selected; ?>><?php echo $location["name"]; ?></option>
+    <?php
+    }?>
+    </select>
+    <?php
+}
+
+function player_form($data = NULL, $showtype = TRUE, $showlocation = FALSE, $location = "NULL")
 {
 	$first = ""; $last = ""; $email=""; $code=""; $type=""; $id="";
 	
@@ -70,6 +89,15 @@ function player_form($data = NULL, $showtype = TRUE)
 	?>
 	<form class="form-horizontal" action="" method="post">
 	<input name="id" type="hidden" value="<?php echo $id;?>" />
+    <?php
+    if( $showlocation ) {
+    ?>
+        <div class="form-group">
+            <div class="col-md-12"><?php location_select("location", $location); ?></div>
+        </div>
+    <?php
+    }
+    ?>
 	<div class="form-group">
         <div class="col-md-12"><input class="form-control" placeholder="First Name" name="first_name" required="true" value="<?php echo $first;?>"/></div>
     </div>

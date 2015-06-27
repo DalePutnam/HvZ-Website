@@ -1,6 +1,9 @@
 <?php
 require_once(dirname(__FILE__) . "/config.php");
 
+$alert_level = "NONE";
+$alert_message = "";
+
 function page_archive_head()
 {
     require_once(dirname(__FILE__) . "/../anti-hammer/anti-hammer.php");
@@ -68,8 +71,22 @@ function page_unsecure_head()
 	<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <?php include("header.php"); ?>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+    <div class="row">
+    <div class="col-md-2 sidebar">
+        <?php include("sidebar.php"); ?>
+    </div>
+    <div class="col-md-10 col-md-offset-2 main">
+
 	<?php
     write_response();
+    show_alert();
 }
 function page_unsecure_foot()
 {
@@ -124,7 +141,8 @@ function page_head()
 	<!--</td>
 	<td style="vertical-align:top;width=100%;">-->
 	<?php
-	write_response();
+	//write_response();
+    show_alert();
 }
 
 function write_response()
@@ -220,4 +238,38 @@ function logout($response=NULL)
         header("Location: login.php?logout=&response=" . urlencode($response) . "&response_type=$type");
     }
     exit();
+}
+
+function set_alert($level, $message)
+{
+    global $alert_level;
+    global $alert_message;
+
+    $alert_level = $level;
+    $alert_message = $message;
+}
+
+function show_alert()
+{
+    global $alert_level;
+    global $alert_message;
+
+    if ($alert_level == "SUCCESS")
+    {
+    ?>
+        <div style="margin-bottom: 0; margin-top: 10px" class="alert alert-success alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong>Success!</strong> <?php echo $alert_message; ?>
+        </div>
+    <?php
+    }
+    elseif ($alert_level == "ERROR")
+    {
+    ?>
+        <div style="margin-bottom: 0; margin-top: 10px" class="alert alert-danger alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong>Error!</strong> <?php echo $alert_message; ?>
+        </div>
+    <?php
+    }
 }
