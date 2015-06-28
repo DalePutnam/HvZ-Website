@@ -93,7 +93,7 @@ else
 			$button = "Subscribe";
 		}
 		?>
-		<p>You are currently <?php echo $text; ?> from the all players mailing list. <form method="post" action=""><input type="submit" class="btn btn-primary" name="action" value="<?php echo $button; ?>" /></form></p>
+		<p>You are currently <?php echo $text; ?> from the all players mailing list. <form method="post" action=""><input type="submit" class="btn btn-default" name="action" value="<?php echo $button; ?>" /></form></p>
 	<?php }
     // Inventory visible for humans or spectators
     if( IsHuman() || IsSpectator() ) {
@@ -122,14 +122,14 @@ else
 		{
 		?>
 			Your score is currently <strong>visible</strong> to other players.<br/>
-			<form method="post" action=""><input type="submit" class="btn btn-primary" name="action" value="Hide Score" /></form>
+			<form method="post" action=""><input type="submit" class="btn btn-default" name="action" value="Hide Score" /></form>
 		<?php
 		}
 		else
 		{
 		?>
 			Your score is currently <strong>hidden</strong> from other players.<br/>
-			<form method="post" action=""><input type="submit" class="btn btn-primary" name="action" value="Show Score" /></form>
+			<form method="post" action=""><input type="submit" class="btn btn-default" name="action" value="Show Score" /></form>
 		<?php
 		}
 	}

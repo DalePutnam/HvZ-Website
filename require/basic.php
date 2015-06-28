@@ -79,10 +79,10 @@ function page_unsecure_head()
 
     <div class="container-fluid">
     <div class="row">
-    <div class="col-md-2 sidebar">
+    <div class="col-sm-2 col-md-2 sidebar">
         <?php include("sidebar.php"); ?>
     </div>
-    <div class="col-md-10 col-md-offset-2 main">
+    <div class="col-xs-12 col-sm-10 col-md-10 col-sm-offset-2 col-md-offset-2 main">
 
 	<?php
     write_response();
@@ -91,8 +91,11 @@ function page_unsecure_head()
 function page_unsecure_foot()
 {
 	?>
-	</body>
-	</html>
+    </div>
+    </div>
+    </div>
+    </body>
+    </html>
 	<?php
 }
 function page_head()
@@ -134,10 +137,13 @@ function page_head()
 	<!-- Sidebar -->
     <div class="container-fluid">
     <div class="row">
-    <div class="col-md-2 sidebar">
+    <div class="col-sm-2 col-md-2 sidebar">
     <?php include("sidebar.php"); ?>
     </div>
-    <div class="col-md-10 col-md-offset-2 main">
+    <div class="col-xs-12 col-sm-10 col-md-10 col-sm-offset-2 col-md-offset-2 main">
+    <?php if( is_maintenance() && !Unsecure() ) { ?>
+    <p style='margin-top: 15px; height: 25px; padding: 0; color: red'>MAINTENANCE MODE ENABLED. SEE <a style='padding: 0; display: inline' href='game.php'>GAME SETTINGS</a> PAGE FOR MORE INFO</p>
+    <?php } ?>
 	<!--</td>
 	<td style="vertical-align:top;width=100%;">-->
 	<?php

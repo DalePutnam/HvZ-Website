@@ -11,8 +11,8 @@ require_once("require/basic.php");
 ?>
 <?php if( isset( $_SESSION["user"] ) ) { 
 	if( isset( $_GET["reason"] ) )
-		header("Location: panel.php?response=" . $_GET["reason"]); 
-	else header("Location: panel.php"); 
+		header("Location: panel.php?response=" . $_GET["reason"]);
+	else header("Location: panel.php");
 	exit(); 
 } ?>
 <?php
@@ -21,7 +21,7 @@ page_unsecure_head();
 if( is_maintenance( ) ) { echo "<strong style='color:red;'>Website is in maintenance mode, please come back later</strong>"; }
 ?>
 <div class="row">
-    <div class="col-md-3">
+    <div class="col-xs-12 col-sm-3 col-md-3">
         <form action="panel.php?reload=1" method="post">
             <div class="form-group">
                 <label>E-Mail</label>
