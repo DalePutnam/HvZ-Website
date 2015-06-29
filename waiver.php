@@ -28,13 +28,13 @@ if( HasSignedWaiver() )
 page_head();
 
 $waiver = file_get_contents( $templates_dir . "waiver.txt" );
-echo "<h1>Sign the Waiver</h1>";
+echo "<h2>Sign the Waiver</h2>";
 echo "<p>You <strong>must</strong> agree to the following waiver before you are allowed to play the game. Please read it carefully and click accept below.</p>";
 echo "<p>$waiver</p>";
 ?>
 <form method="post" action="">
-	<input type="submit" name="action" value="Accept" />
-	<input type="submit" name="action" value="Reject" />
+	<input class="btn btn-default" type="submit" name="action" value="Accept" />
+	<input class="btn btn-default" type="submit" name="action" value="Reject" />
 </form>
 <?php
 page_foot();
