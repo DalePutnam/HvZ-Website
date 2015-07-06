@@ -48,7 +48,7 @@ while( $row = $result->fetch_assoc() )
 	array_push( $registrations, strtotime( $row["reg_date"] )*1000 );
 	
 	$datenum = ((int)date( "w", strtotime($row["reg_date"]) )) - 1;
-	//$reg_days[$datenum]++;
+	$reg_days[$datenum]++;
 }
 $result->free();
 
@@ -58,7 +58,7 @@ while( $row = $result->fetch_assoc() )
 	array_push( $stuns, strtotime( $row["time"] )*1000 );
 	
 	$datenum = ((int)date( "w", strtotime($row["time"]) )) - 1;
-	//$stun_days[$datenum]++;
+	$stun_days[$datenum]++;
 }
 $result->free();
 
@@ -68,7 +68,7 @@ while( $row = $result->fetch_assoc() )
 	array_push( $tags, strtotime( $row["time"] )*1000 );
 	
 	$datenum = ((int)date( "w", strtotime($row["time"]) )) - 1;
-	//$tag_days[$datenum]++;
+	$tag_days[$datenum]++;
 }
 $result->free();
 

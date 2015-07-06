@@ -16,8 +16,10 @@ $time = time();
 $briefing = array("id" => 0,
     "release_time" => implode("T", explode(" ", date("Y-m-d H:i:s", $time))),
     "expire_time" => implode("T", explode(" ", date("Y-m-d H:i:s", $time + 3600))),
-    "title" => "",
-    "body" => "");
+    "human_title" => "",
+    "human_body" => "",
+    "zombie_title" => "",
+    "zombie_body" => "");
 $editing = false;
 
 if( isset( $_REQUEST["action"] ) )
@@ -27,8 +29,10 @@ if( isset( $_REQUEST["action"] ) )
     {
         $release = $_REQUEST["release_time"];
         $expire = $_REQUEST["expire_time"];
-        $title = $_REQUEST["title"];
-        $body = $_REQUEST["body"];
+        $human_title = $_REQUEST["human_title"];
+        $human_body = $_REQUEST["human_body"];
+        $zombie_title = $_REQUEST["zombie_title"];
+        $zombie_body = $_REQUEST["zombie_body"];
 
         if (check_briefing_conflict($release, $expire))
         {
@@ -36,7 +40,7 @@ if( isset( $_REQUEST["action"] ) )
         }
         else
         {
-            schedule_briefing($release, $expire, $title, $body);
+            schedule_briefing($release, $expire, $human_title, $human_body, $zombie_title, $zombie_body);
             set_alert("SUCCESS", "Briefing has been scheduled.");
         }
     }
@@ -45,10 +49,12 @@ if( isset( $_REQUEST["action"] ) )
         $id = $_REQUEST["id"];
         $release = $_REQUEST["release_time"];
         $expire = $_REQUEST["expire_time"];
-        $title = $_REQUEST["title"];
-        $body = $_REQUEST["body"];
+        $human_title = $_REQUEST["human_title"];
+        $human_body = $_REQUEST["human_body"];
+        $zombie_title = $_REQUEST["zombie_title"];
+        $zombie_body = $_REQUEST["zombie_body"];
 
-        update_briefing($id, $release, $expire, $title, $body);
+        update_briefing($id, $release, $expire, $human_title, $human_body, $zombie_title, $zombie_body);
         set_alert("SUCCESS", "Briefing has been updated");
     }
     elseif( $action == "Delete")
@@ -91,9 +97,12 @@ page_head();
         <form action="" method="post">
             <label>Release Time</label><input class="form-control" name="release_time" type="datetime-local" value="<?php echo $briefing['release_time'];?>"/><br/>
             <label>Expire Time</label><input class="form-control" name="expire_time" type="datetime-local" value="<?php echo $briefing['expire_time'];?>"/><br/>
-            <label>Title</label><input class="form-control" name="title" type="text" value="<?php echo $briefing['title'];?>"/><br/>
-            <label>Briefing</label><br/>
-            <textarea class="form-control" name="body" cols="100" rows="10" style="resize: vertical"><?php echo $briefing['body'];?></textarea><br/>
+            <label>Human Title</label><input class="form-control" name="human_title" type="text" value="<?php echo $briefing['human_title'];?>"/><br/>
+            <label>Human Briefing</label><br/>
+            <textarea class="form-control" name="human_body" cols="100" rows="10" style="resize: vertical"><?php echo $briefing['human_body'];?></textarea><br/>
+            <label>Zombie Title</label><input class="form-control" name="zombie_title" type="text" value="<?php echo $briefing['zombie_title'];?>"/><br/>
+            <label>Zombie Briefing</label><br/>
+            <textarea class="form-control" name="zombie_body" cols="100" rows="10" style="resize: vertical"><?php echo $briefing['zombie_body'];?></textarea><br/>
             <?php
                 if ($editing)
                 {
@@ -105,6 +114,7 @@ page_head();
                     echo "<input class='btn btn-default' type='submit' value='Submit' name='action'/>";
                 }
             ?>
+
             <input class='btn btn-default' type="submit" value="Clear" name="action"/>
         </form>
     </div>

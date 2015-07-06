@@ -26,16 +26,19 @@ function check_briefing_conflict($release, $expire)
     return TRUE;
 }
 
-function schedule_briefing($release, $expire, $title, $body)
+function schedule_briefing($release, $expire, $human_title, $human_body, $zombie_title, $zombie_body)
 {
     global $sql;
 
     $release = $sql->real_escape_string($release);
     $expire = $sql->real_escape_string($expire);
-    $title = $sql->real_escape_string($title);
-    $body = $sql->real_escape_string($body);
+    $human_title = $sql->real_escape_string($human_title);
+    $human_body = $sql->real_escape_string($human_body);
+    $zombie_title = $sql->real_escape_string($zombie_title);
+    $zombie_body = $sql->real_escape_string($zombie_body);
 
-    if (!$sql->query("INSERT INTO hvz_briefings (release_time, expire_time, title, body) VALUES ('$release', '$expire', '$title', '$body');"))
+    if (!$sql->query("INSERT INTO hvz_briefings (release_time, expire_time, human_title, human_body, zombie_title, zombie_body)
+                      VALUES ('$release', '$expire', '$human_title', '$human_body', '$zombie_title', '$zombie_body');"))
     {
         return FALSE;
     }
@@ -43,17 +46,23 @@ function schedule_briefing($release, $expire, $title, $body)
     return TRUE;
 }
 
-function update_briefing($id, $release, $expire, $title, $body)
+function update_briefing($id, $release, $expire, $human_title, $human_body, $zombie_title, $zombie_body)
 {
     global $sql;
 
     $id = $sql->real_escape_string($id);
     $release = $sql->real_escape_string($release);
     $expire = $sql->real_escape_string($expire);
-    $title = $sql->real_escape_string($title);
-    $body = $sql->real_escape_string($body);
+    $human_title = $sql->real_escape_string($human_title);
+    $human_body = $sql->real_escape_string($human_body);
+    $zombie_title = $sql->real_escape_string($zombie_title);
+    $zombie_body = $sql->real_escape_string($zombie_body);
 
-    if (!$sql->query("UPDATE hvz_briefings SET release_time = '$release', expire_time = '$expire', title = '$title', body = '$body' WHERE id= '$id';"))
+    if (!$sql->query("UPDATE hvz_briefings
+                      SET release_time = '$release', expire_time = '$expire',
+                          human_title = '$human_title', human_body = '$human_body',
+                          zombie_title = '$zombie_title', zombie_body = '$zombie_body'
+                      WHERE id= '$id';"))
     {
         return FALSE;
     }
@@ -81,7 +90,8 @@ function get_active_briefings()
 
     $briefings = array();
     $current_time = date("Y-m-d H:i:s");
-    $query = "SELECT title,body FROM hvz_briefings WHERE release_time <= '$current_time' AND expire_time > '$current_time'";
+    $query = "SELECT human_title,human_body,zombie_title,zombie_body
+              FROM hvz_briefings WHERE release_time <= '$current_time' AND expire_time > '$current_time'";
 
 
     if ($result = $sql->query($query))
@@ -182,7 +192,7 @@ function gen_briefing_table()
         echo "<form action='' method='post'>";
         echo "<input type='hidden' value='$briefing[id]' name='id'/>";
         echo "<td style='display: none'></td>";
-        echo "<td>$briefing[title]</td>";
+        echo "<td>$briefing[human_title]" . "/" . "$briefing[zombie_title]</td>";
         echo "<td>$briefing[release_time]</td>";
         echo "<td>$briefing[expire_time]</td>";
         //echo "<td>";

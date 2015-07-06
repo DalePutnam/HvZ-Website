@@ -42,15 +42,55 @@ page_head();
     }
     elseif ($status == "ACTIVE")
     {
-        $title = htmlentities($active[0]["title"]);
-        $body = htmlentities($active[0]["body"]);
+        if (!IsAdmin())
+        {
+            $title = "";
+            $body = "";
 
-        $body = preg_replace('/\n(\s*\n)+/', '</p><p>', $body);
-        $body = preg_replace('/\n/', '<br>', $body);
-        $body = '<p>'.$body.'</p>';
+            if (IsHuman()) {
+                $title = htmlentities($active[0]["human_title"]);
+                $body = htmlentities($active[0]["human_body"]);
+            } elseif (IsZombie()) {
+                $title = htmlentities($active[0]["zombie_title"]);
+                $body = htmlentities($active[0]["zombie_body"]);
+            }
 
-        echo "<strong>$title</strong><br/>";
-        echo "<div>$body</div>";
+            $body = preg_replace('/{/', '<a href="', $body);
+            $body = preg_replace('/\|/', '">', $body);
+            $body = preg_replace('/}/', '</a>', $body);
+            $body = preg_replace('/\n(\s*\n)+/', '</p><p>', $body);
+            $body = preg_replace('/\n/', '<br>', $body);
+            $body = '<p>' . $body . '</p>';
+
+            echo "<strong>$title</strong><br/>";
+            echo "<div>$body</div>";
+        }
+        else
+        {
+            $human_title = htmlentities($active[0]["human_title"]);
+            $human_body = htmlentities($active[0]["human_body"]);
+            $zombie_title = htmlentities($active[0]["zombie_title"]);
+            $zombie_body = htmlentities($active[0]["zombie_body"]);
+
+            $human_body = preg_replace('/{/', '<a href="', $human_body);
+            $human_body = preg_replace('/\|/', '">', $human_body);
+            $human_body = preg_replace('/}/', '</a>', $human_body);
+            $human_body = preg_replace('/\n(\s*\n)+/', '</p><p>', $human_body);
+            $human_body = preg_replace('/\n/', '<br>', $human_body);
+            $human_body = '<p>' . $human_body . '</p>';
+
+            $zombie_body = preg_replace('/{/', '<a href="', $zombie_body);
+            $zombie_body = preg_replace('/\|/', '">', $zombie_body);
+            $zombie_body = preg_replace('/}/', '</a>', $zombie_body);
+            $zombie_body = preg_replace('/\n(\s*\n)+/', '</p><p>', $zombie_body);
+            $zombie_body = preg_replace('/\n/', '<br>', $zombie_body);
+            $zombie_body = '<p>' . $zombie_body . '</p>';
+
+            echo "<strong>$human_title</strong><br/>";
+            echo "<div>$human_body</div>";
+            echo "<strong>$zombie_title</strong><br/>";
+            echo "<div>$zombie_body</div>";
+        }
     }
     elseif ($status == "QUEUED")
     {
