@@ -100,7 +100,7 @@ function drawGraph( ctx, width, height, sortedDateObjectList, colorList, startTi
 	var pixelPerPlayer = height / maxPlayers;
 	
 	ctx.clearRect( 0, 0, width, height );
-	drawGrid( ctx, width, height, (2 * 60 * 60 * 1000 * pixelPerTime), (10 * pixelPerPlayer), 12, 10, 2, 10 );
+	drawGrid( ctx, width, height, (4 * 60 * 60 * 1000 * pixelPerTime), (20 * pixelPerPlayer), 6, 5, 4, /*10*/20 );
 	
 	for( var i = 0; i < sortedDateObjectList.length; i++ )
 	{

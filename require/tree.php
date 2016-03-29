@@ -234,6 +234,7 @@ class ImageTree
         $delta = $this->leaf_counts[$child_id] * $angle_per_leaf;
         $angle += $delta / 2;
 
+        $rad = deg2rad($angle);
         $shift_x = -sin($angle) * $this->text_height / 2;
         $shift_y = -cos($angle) * $this->text_height / 2;
         $dx = cos($angle) * $radius;
@@ -243,12 +244,31 @@ class ImageTree
 
         if(!$draw)
         {
-            $bounds = $this->text_bounds($name, $angle, $x + $dx + $shift_x, $y + $dy + $shift_y);
-            $this->extend_bounds($bounds);
+            if (rad2deg($angle) >= 90 && rad2deg($angle) < 270)
+            {
+                $dxx = cos($angle)*$text_width;
+                $dyy = -sin($angle)*$text_width;
+                $bounds = $this->text_bounds($name, $angle, $x + $dx +$dxx + $shift_x, $y + $dy + $dyy + $shift_y);
+                $this->extend_bounds($bounds);
+            }
+            else
+            {
+                $bounds = $this->text_bounds($name, $angle, $x + $dx + $shift_x, $y + $dy + $shift_y);
+                $this->extend_bounds($bounds);
+            }
         }
         else
         {
-            $this->draw_text($name, $x+$dx+$shift_x, $y+$dy+$shift_y, $angle);
+            if (rad2deg($angle) >= 90 && rad2deg($angle) < 270)
+            {
+                $dxx = cos($angle)*$text_width;
+                $dyy = -sin($angle)*$text_width;
+                $this->draw_text($name, $x+$dx+$dxx-$shift_x, $y+$dy+$dyy-$shift_y, $angle + deg2rad(180));
+            }
+            else
+            {
+                $this->draw_text($name, $x+$dx+$shift_x, $y+$dy+$shift_y, $angle);
+            }
         }
         $angle += $delta / 2;
 

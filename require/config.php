@@ -27,3 +27,4 @@ $sql_database = "watsfic";
 $sql_user = "watsfic";
 $sql_pass = "t60ncOV3FwspPKInlWcO";
 $sql_host = "localhost";
+?>

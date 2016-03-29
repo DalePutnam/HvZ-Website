@@ -197,7 +197,7 @@ function draw_tree( $kills, $kills_by_id, $counts, $count, $height, $r, $x, $y, 
 		array_push($angles, $angle);
 		$delta = $counts[$victim]*$angle_per_leaf;
 		$angle += $delta/2;
-		
+
 		$rad = deg2rad($angle);
 		$shiftx = -sin($rad)*$height/2;
 		$shifty = -cos($rad)*$height/2;
@@ -208,8 +208,18 @@ function draw_tree( $kills, $kills_by_id, $counts, $count, $height, $r, $x, $y, 
 		
 		array_push( $positions1, array( "x" => $x+$dx, "y" => $y+$dy ) );
 		array_push( $positions2, array( "x" => $x+$dx/$r*($r+$w), "y" => $y+$dy/$r*($r+$w) ) );
-		
-		draw_text($name, $x+$dx+$shiftx, $y+$dy+$shifty, $angle);
+
+        if ($angle >= 90 && $angle < 270)
+        {
+            $dxx = cos($rad)*text_width($name);
+            $dyy = -sin($rad)*text_width($name);
+            draw_text($name, $x+$dx+$dxx-$shiftx, $y+$dy+$dyy-$shifty, $angle + 180);
+        }
+        else
+        {
+            draw_text($name, $x+$dx+$shiftx, $y+$dy+$shifty, $angle);
+        }
+
 		$angle += $delta/2;
 	}
 	array_push($angles, $ang+$angs);
