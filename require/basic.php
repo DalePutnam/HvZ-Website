@@ -14,13 +14,13 @@ function page_archive_head()
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
         <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>-->
-        <script src="bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
         <script src="../js/jquery-ui-timepicker-addon.js"></script>
         <script src="../js/players.js"></script>
         <script src="../js/players2.js"></script>
         <script src="../js/graph.js"></script>
         <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">-->
-        <link rel="stylesheet" href="bootstrap-3.3.4-dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
         <link rel="stylesheet" type="text/css" href="../style.css">
     </head>
@@ -60,13 +60,13 @@ function page_unsecure_head()
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
     <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>-->
-    <script src="bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
 	<script src="js/jquery-ui-timepicker-addon.js"></script>
 	<script src="js/players.js"></script>
 	<script src="js/players2.js"></script>
 	<script src="js/graph.js"></script>
     <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">-->
-    <link rel="stylesheet" href="bootstrap-3.3.4-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
@@ -108,14 +108,14 @@ function page_head()
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
     <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>-->
-    <script src="bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
 	<script src="js/jquery-ui-timepicker-addon.js"></script>
 	<script src="js/players.js"></script>
 	<script src="js/players2.js"></script>
 	<script src="js/graph.js"></script>
     <script src="js/table.js"></script>
     <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">-->
-    <link rel="stylesheet" href="bootstrap-3.3.4-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" type="text/css" href="style.css">
 	</head>
