@@ -76,7 +76,7 @@ body {
 li.test {
     display: block;
 }
-@media (min-width: 768px) {
+@media all and (min-width: 1000px) {
     .sidebar {
         position: fixed;
         top: 51px;
@@ -109,3 +109,8 @@ table.mail>tbody>tr:nth-child(4n) {
     background: #f9f9f9;
 }
 
+@media all and (min-width: 768px) and (max-width: 1000px){
+	.col-sm-offset-2 {
+		margin-left: 0;
+	}
+}
