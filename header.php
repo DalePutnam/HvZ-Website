@@ -35,6 +35,11 @@ echo "<ul class='nav navbar-nav navbar-right'>";
 echo "<li class='test'><a href='panel.php'>Home</a></li>";
 global $rules_file;
 global $map_file;
+echo "<li class='test'><a href=\"players2.php\">Player List</a></li>";
+echo "<li class='test'><a href=\"mission_briefing.php\">Mission Briefing</a></li>";
+echo "<li class='test'><a href=\"password.php\">Change Password</a></li>";
+echo "<li class='test'><a href=\"mods.php\">Contact Moderators</a></li>";
+echo "<li class='test'><a href=\"graphs.php\">Graph</a></li>";
 echo "<li class='test'><a href='$rules_file'>Game Rules</a></li>";
 echo "<li class='test'><a href='$map_file'>Game Map</a></li>";
 if ( Unsecure() )
@@ -59,6 +64,25 @@ elseif ( IsPlayer() )
         echo "<li class='test'><a href='ztree.php'>Zombie Family Tree</a></li>";
     }
     echo "<li class='test'><a href='breakdown.php'>Score Breakdown</a></li>";
+}
+else if ( IsAdmin() )
+{
+    echo "<li class='test'><a href=\"add_player.php\">Add Player</a></li>";
+    echo "<li class='test'><a href=\"schedule_briefing.php\">Schedule Briefing</a></li>";
+    echo "<li class='test'><a href=\"signup_locations.php\">Sign Up Locations</a></li>";
+    echo "<li class='test'><a href=\"oz2.php\">Manage OZ List</a></li>";
+    echo "<li class='test'><a href=\"startgame.php\">Start Game Wizard</a></li>";
+    echo "<li class='test'><a href=\"game.php\">Game Settings</a></li>";
+    echo "<li class='test'><a href=\"manage_inventory.php\">Inventory Management</a></li>";
+    echo "<li class='test'><a href=\"subscriptions.php\">Mailing Lists</a></li>";
+    echo "<li class='test'><a href=\"manage_stuns.php\">Stun Management</a></li>";
+    echo "<li class='test'><a href=\"milestones.php\">View Milestone Report</a></li>";
+    echo "<li class='test'><a href=\"manage_supply.php\">Generate Supply Codes</a></li>";
+    echo "<li class='test'><a href=\"view_mail.php\">View Mail Logs</a></li>";
+    echo "<li class='test'><a href=\"edit_template.php\">Edit E-Mail Templates</a></li>";
+    echo "<li class='test'><a href=\"manage_waiver.php\">Waiver Information</a></li>";
+    echo "<li class='test'><a href=\"archive.php\">Archive Management</a></li>";
+    echo "<li class='test'><a href=\"csv.php\">CSV</a></li>";
 }
 
 if ( !Unsecure() && (IsPlayer() || IsAdmin()) )

@@ -1,5 +1,5 @@
 <?php session_start(); ?>
-<?php 
+<?php
 require_once("require/secure.php");
 require_once("require/rplayers.php");
 require_once("require/forms.php");
@@ -18,10 +18,10 @@ if( isset( $_REQUEST["action"] ) )
 		$comment = strip_tags(trim($_REQUEST["comment"]));
 		$helper = trim($_REQUEST["helper"]);
 
-        if($comment == "Enter a descriptive comment or your stun may be deleted!")
-        {
-            set_alert("ERROR", "You failed to enter a descriptive comment! Put some effort in, will ya?");
-        }
+    if($comment == "Enter a descriptive comment or your stun may be deleted!")
+    {
+        set_alert("ERROR", "You failed to enter a descriptive comment! Put some effort in, will ya?");
+    }
 
 		$idhelper = NULL;
 		if( $helper != "" )
@@ -36,21 +36,23 @@ if( isset( $_REQUEST["action"] ) )
                 set_alert("ERROR", "There is a typo in your helper's email address. Please correct.");
 			}
 		}
-		
-		$player = get_player_by_code($code);
-		if( $player == NULL ) set_alert("ERROR", "Not a valid player");
-		$stunned = stun_player(ID(), $player["id"], $datetime, $comment, $idhelper);
-		if( $stunned === TRUE )
-		{
-			$count = get_num_stuns(ID(), $player["id"]);
-			
-			hvzmailf($player["email"], "stun", array("killer_first" => First(), "killer_last" => Last(), "kill_time" => date("l F jS \a\t g:iA", strtotime($datetime)), "comment" => $comment, "count" => $count));
 
-            set_alert("SUCCESS", "You have stunned {$player['first_name']} {$player['last_name']}. You have reported stunning  {$player['first_name']} $count time(s) today. Points will be tallied and awarded at the end of each day.");
+		$player = get_player_by_code($code);
+		if( $player == NULL ) {
+				set_alert("ERROR", "Not a valid player");
 		}
 		else
 		{
-            set_alert("ERROR", "$stunned");
+				$stunned = stun_player(ID(), $player["id"], $datetime, $comment, $idhelper);
+				if( $stunned === TRUE )
+				{
+						hvzmailf($player["email"], "stun", array("killer_first" => First(), "killer_last" => Last(), "kill_time" => date("l F jS \a\t g:iA", strtotime($datetime)), "comment" => $comment, "count" => $count));
+						set_alert("SUCCESS", "You have stunned {$player['first_name']} {$player['last_name']}. Points will be tallied and awarded at the end of each day.");
+				}
+				else
+				{
+		        set_alert("SUCCESS", "You have stunned {$player['first_name']} {$player['last_name']}. Points will be tallied and awarded at the end of each day.");
+				}
 		}
 	}
 }
